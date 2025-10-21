@@ -1,5 +1,12 @@
 import * as z from "zod";
 import { createAgent, tool } from "langchain";
+import "dotenv/config";
+
+/** To run the script, use the following command:
+
+npx tsx index.ts
+
+ */
 
 const getWeather = tool(
   ({ city }: { city: string }) => `It's always sunny in ${city}!`,
