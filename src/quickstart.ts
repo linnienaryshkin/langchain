@@ -4,7 +4,7 @@ import "dotenv/config";
 
 /** To run the script, use the following command:
 
-npx tsx index.ts
+npx tsx src/quickstart.ts
 
  */
 
