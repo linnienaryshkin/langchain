@@ -1,0 +1,306 @@
+{
+  "time": "2025-10-25T11:55:14.931Z",
+  "level": "DEBUG",
+  "message": "Dynamic model selection",
+  "params": {
+    "messageCount": 1,
+    "model": {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain",
+        "chat_models",
+        "anthropic",
+        "ChatAnthropic"
+      ],
+      "kwargs": {
+        "api_key": {
+          "lc": 1,
+          "type": "secret",
+          "id": [
+            "ANTHROPIC_API_KEY"
+          ]
+        },
+        "model": "claude-haiku-4-5",
+        "anthropic_api_key": {
+          "lc": 1,
+          "type": "secret",
+          "id": [
+            "ANTHROPIC_API_KEY"
+          ]
+        }
+      }
+    }
+  }
+}
+{
+  "time": "2025-10-25T11:55:14.931Z",
+  "level": "DEBUG",
+  "message": "Dynamic system prompt",
+  "params": {
+    "userRole": "expert"
+  }
+}
+{
+  "time": "2025-10-25T11:55:16.153Z",
+  "level": "DEBUG",
+  "message": "Agent stream chunk",
+  "params": {
+    "chunk": {
+      "model_request": {
+        "messages": [
+          {
+            "lc": 1,
+            "type": "constructor",
+            "id": [
+              "langchain_core",
+              "messages",
+              "AIMessage"
+            ],
+            "kwargs": {
+              "content": [
+                {
+                  "type": "tool_use",
+                  "id": "toolu_01HzekE2w979YDeqK96BrJb4",
+                  "name": "get_weather",
+                  "input": {
+                    "location": "Tokyo"
+                  }
+                }
+              ],
+              "additional_kwargs": {
+                "model": "claude-haiku-4-5-20251001",
+                "id": "msg_01YSdHp3zohPzWo9pLbJBpy6",
+                "type": "message",
+                "role": "assistant",
+                "stop_reason": "tool_use",
+                "stop_sequence": null,
+                "usage": {
+                  "input_tokens": 705,
+                  "cache_creation_input_tokens": 0,
+                  "cache_read_input_tokens": 0,
+                  "cache_creation": {
+                    "ephemeral_5m_input_tokens": 0,
+                    "ephemeral_1h_input_tokens": 0
+                  },
+                  "output_tokens": 54,
+                  "service_tier": "standard"
+                }
+              },
+              "tool_calls": [
+                {
+                  "name": "get_weather",
+                  "args": {
+                    "location": "Tokyo"
+                  },
+                  "id": "toolu_01HzekE2w979YDeqK96BrJb4",
+                  "type": "tool_call"
+                }
+              ],
+              "usage_metadata": {
+                "input_tokens": 705,
+                "output_tokens": 54,
+                "total_tokens": 759,
+                "input_token_details": {
+                  "cache_creation": 0,
+                  "cache_read": 0
+                }
+              },
+              "response_metadata": {
+                "model": "claude-haiku-4-5-20251001",
+                "id": "msg_01YSdHp3zohPzWo9pLbJBpy6",
+                "stop_reason": "tool_use",
+                "stop_sequence": null,
+                "usage": {
+                  "input_tokens": 705,
+                  "cache_creation_input_tokens": 0,
+                  "cache_read_input_tokens": 0,
+                  "cache_creation": {
+                    "ephemeral_5m_input_tokens": 0,
+                    "ephemeral_1h_input_tokens": 0
+                  },
+                  "output_tokens": 54,
+                  "service_tier": "standard"
+                },
+                "type": "message",
+                "role": "assistant",
+                "model_provider": "anthropic"
+              },
+              "id": "msg_01YSdHp3zohPzWo9pLbJBpy6",
+              "invalid_tool_calls": [],
+              "name": "model"
+            }
+          }
+        ],
+        "_privateState": {
+          "threadLevelCallCount": 1,
+          "runModelCallCount": 0
+        }
+      }
+    }
+  }
+}
+{
+  "time": "2025-10-25T11:55:16.154Z",
+  "level": "DEBUG",
+  "message": "Get weather tool",
+  "params": {
+    "location": "Tokyo"
+  }
+}
+{
+  "time": "2025-10-25T11:55:16.156Z",
+  "level": "DEBUG",
+  "message": "Agent stream chunk",
+  "params": {
+    "chunk": {
+      "tools": {
+        "messages": [
+          {
+            "lc": 1,
+            "type": "constructor",
+            "id": [
+              "langchain_core",
+              "messages",
+              "ToolMessage"
+            ],
+            "kwargs": {
+              "status": "success",
+              "content": "Weather in Tokyo: Sunny, 72°F",
+              "tool_call_id": "toolu_01HzekE2w979YDeqK96BrJb4",
+              "name": "get_weather",
+              "metadata": {},
+              "additional_kwargs": {},
+              "response_metadata": {},
+              "id": "b65d41e6-97ea-45d7-b37f-eae57e429906"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+{
+  "time": "2025-10-25T11:55:16.156Z",
+  "level": "DEBUG",
+  "message": "Dynamic model selection",
+  "params": {
+    "messageCount": 3,
+    "model": {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain",
+        "chat_models",
+        "anthropic",
+        "ChatAnthropic"
+      ],
+      "kwargs": {
+        "api_key": {
+          "lc": 1,
+          "type": "secret",
+          "id": [
+            "ANTHROPIC_API_KEY"
+          ]
+        },
+        "model": "claude-haiku-4-5",
+        "anthropic_api_key": {
+          "lc": 1,
+          "type": "secret",
+          "id": [
+            "ANTHROPIC_API_KEY"
+          ]
+        }
+      }
+    }
+  }
+}
+{
+  "time": "2025-10-25T11:55:16.156Z",
+  "level": "DEBUG",
+  "message": "Dynamic system prompt",
+  "params": {
+    "userRole": "expert"
+  }
+}
+{
+  "time": "2025-10-25T11:55:17.661Z",
+  "level": "DEBUG",
+  "message": "Agent stream chunk",
+  "params": {
+    "chunk": {
+      "model_request": {
+        "messages": [
+          {
+            "lc": 1,
+            "type": "constructor",
+            "id": [
+              "langchain_core",
+              "messages",
+              "AIMessage"
+            ],
+            "kwargs": {
+              "content": "Here's the weather report for Tokyo:\n\n**Tokyo Weather**\n- **Condition:** Sunny\n- **Temperature:** 72°F (approximately 22°C)\n\nIt's a pleasant day in Tokyo with clear, sunny skies and mild temperatures. This is ideal weather for outdoor activities. Make sure to bring sunscreen if you'll be spending time outside!",
+              "additional_kwargs": {
+                "model": "claude-haiku-4-5-20251001",
+                "id": "msg_01DaxUevH7MPNczEfz6fRS8U",
+                "type": "message",
+                "role": "assistant",
+                "stop_reason": "end_turn",
+                "stop_sequence": null,
+                "usage": {
+                  "input_tokens": 782,
+                  "cache_creation_input_tokens": 0,
+                  "cache_read_input_tokens": 0,
+                  "cache_creation": {
+                    "ephemeral_5m_input_tokens": 0,
+                    "ephemeral_1h_input_tokens": 0
+                  },
+                  "output_tokens": 80,
+                  "service_tier": "standard"
+                }
+              },
+              "usage_metadata": {
+                "input_tokens": 782,
+                "output_tokens": 80,
+                "total_tokens": 862,
+                "input_token_details": {
+                  "cache_creation": 0,
+                  "cache_read": 0
+                }
+              },
+              "response_metadata": {
+                "model": "claude-haiku-4-5-20251001",
+                "id": "msg_01DaxUevH7MPNczEfz6fRS8U",
+                "stop_reason": "end_turn",
+                "stop_sequence": null,
+                "usage": {
+                  "input_tokens": 782,
+                  "cache_creation_input_tokens": 0,
+                  "cache_read_input_tokens": 0,
+                  "cache_creation": {
+                    "ephemeral_5m_input_tokens": 0,
+                    "ephemeral_1h_input_tokens": 0
+                  },
+                  "output_tokens": 80,
+                  "service_tier": "standard"
+                },
+                "type": "message",
+                "role": "assistant",
+                "model_provider": "anthropic"
+              },
+              "id": "msg_01DaxUevH7MPNczEfz6fRS8U",
+              "tool_calls": [],
+              "invalid_tool_calls": [],
+              "name": "model"
+            }
+          }
+        ],
+        "_privateState": {
+          "threadLevelCallCount": 2,
+          "runModelCallCount": 1
+        }
+      }
+    }
+  }
+}

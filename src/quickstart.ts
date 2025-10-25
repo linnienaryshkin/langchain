@@ -1,10 +1,11 @@
 import * as z from "zod";
 import { createAgent, tool } from "langchain";
 import "dotenv/config";
+import { logger } from "logger";
 
 /** To run the script, use the following command:
 
-npx tsx src/quickstart.ts
+tsx src/quickstart.ts |& tee src/quickstart.json
 
  */
 
@@ -24,8 +25,8 @@ const agent = createAgent({
   tools: [getWeather],
 });
 
-console.log(
-  await agent.invoke({
-    messages: [{ role: "user", content: "What's the weather in Tokyo?" }],
-  })
-);
+const result = await await agent.invoke({
+  messages: [{ role: "user", content: "What's the weather in Tokyo?" }],
+});
+
+logger.info("Quickstart result", { result });
