@@ -1,5 +1,13 @@
 import "dotenv/config";
 import * as z from "zod";
+import { logger } from "logger";
+
+/** To run the script, use the following command:
+
+tsx src/agent.ts |& tee src/agent.json
+
+ */
+
 import { ChatAnthropic } from "@langchain/anthropic";
 import {
   createAgent,
@@ -9,14 +17,7 @@ import {
   ToolCall,
   ToolMessage,
 } from "langchain";
-import { logger } from "logger";
 // import { MessagesZodState } from "@langchain/langgraph";
-
-/** To run the script, use the following command:
-
-tsx src/agent.ts |& tee src/agent.json
-
- */
 
 /**
  * Smartest model for complex agents and coding tasks
