@@ -110,8 +110,8 @@ const model = await initChatModel("claude-haiku-4-5", {
 
 // ---
 
-// Yeah, very poor TS support so far...
 const response = await model.invoke("Tell me a joke", {
+  // Very poor TS support so far...
   runName: "joke_generation", // Custom name for this run
   tags: ["humor", "demo"], // Tags for categorization
   metadata: { user_id: "123" }, // Custom metadata

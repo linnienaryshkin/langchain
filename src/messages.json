@@ -1,0 +1,71 @@
+{
+  "time": "2025-10-29T17:39:08.148Z",
+  "level": "INFO",
+  "message": "Response",
+  "params": {
+    "finalChunk": {
+      "lc": 1,
+      "type": "constructor",
+      "id": [
+        "langchain_core",
+        "messages",
+        "AIMessageChunk"
+      ],
+      "kwargs": {
+        "content": [
+          {
+            "type": "text",
+            "text": ""
+          },
+          {
+            "type": "text",
+            "text": "The weather in San Francisco is currently"
+          },
+          {
+            "type": "text",
+            "text": " sunny and 72°F - a beautiful"
+          },
+          {
+            "type": "text",
+            "text": " day!"
+          }
+        ],
+        "additional_kwargs": {
+          "model": "claude-sonnet-4-5-20250929",
+          "id": "msg_01SWyGhA511Hac7RiZWgMmBd",
+          "type": "message",
+          "role": "assistant",
+          "stop_reason": "end_turn",
+          "stop_sequence": null
+        },
+        "response_metadata": {
+          "model_provider": "anthropic",
+          "usage": {
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "service_tier": "standard"
+          },
+          "output_version": "v1"
+        },
+        "tool_call_chunks": [],
+        "id": "msg_01SWyGhA511Hac7RiZWgMmBd",
+        "usage_metadata": {
+          "input_tokens": 101,
+          "output_tokens": 28,
+          "total_tokens": 129,
+          "input_token_details": {
+            "cache_read": 0,
+            "cache_creation": 0
+          },
+          "output_token_details": {}
+        },
+        "tool_calls": [],
+        "invalid_tool_calls": []
+      }
+    }
+  }
+}
