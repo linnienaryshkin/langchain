@@ -1,0 +1,191 @@
+{
+  "time": "2025-10-30T20:03:42.493Z",
+  "level": "INFO",
+  "message": "Tools result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "What's the weather in Tokyo?",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "bfca22f1-3013-46bd-aa60-c1633c8ec711"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "type": "tool_use",
+                "id": "toolu_01XH5fDMF82EfbYEkuAvDkJ6",
+                "name": "get_weather",
+                "input": {
+                  "city": "Tokyo"
+                }
+              }
+            ],
+            "additional_kwargs": {
+              "model": "claude-sonnet-4-5-20250929",
+              "id": "msg_01AhKSE8ifGpXGsKwGJ1FBBP",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 593,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 53,
+                "service_tier": "standard"
+              }
+            },
+            "tool_calls": [
+              {
+                "name": "get_weather",
+                "args": {
+                  "city": "Tokyo"
+                },
+                "id": "toolu_01XH5fDMF82EfbYEkuAvDkJ6",
+                "type": "tool_call"
+              }
+            ],
+            "usage_metadata": {
+              "input_tokens": 593,
+              "output_tokens": 53,
+              "total_tokens": 646,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-sonnet-4-5-20250929",
+              "id": "msg_01AhKSE8ifGpXGsKwGJ1FBBP",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 593,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 53,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01AhKSE8ifGpXGsKwGJ1FBBP",
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "It's always sunny in Tokyo!",
+            "tool_call_id": "toolu_01XH5fDMF82EfbYEkuAvDkJ6",
+            "name": "get_weather",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "3333d262-df65-4f27-80bf-cc1cf8a352dd"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "The weather in Tokyo is sunny! ☀️",
+            "additional_kwargs": {
+              "model": "claude-sonnet-4-5-20250929",
+              "id": "msg_01U5Gp2g1qkCry4reY5y9UvZ",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 665,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 14,
+                "service_tier": "standard"
+              }
+            },
+            "usage_metadata": {
+              "input_tokens": 665,
+              "output_tokens": 14,
+              "total_tokens": 679,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-sonnet-4-5-20250929",
+              "id": "msg_01U5Gp2g1qkCry4reY5y9UvZ",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 665,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 14,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01U5Gp2g1qkCry4reY5y9UvZ",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        }
+      ]
+    }
+  }
+}
