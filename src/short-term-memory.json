@@ -1,0 +1,12 @@
+/Users/Ilia_Naryshkin/projects/langchain/node_modules/langchain/src/agents/nodes/utils.ts:47
+        .filter(
+         ^
+
+
+TypeError: Cannot read properties of undefined (reading 'filter')
+    at initializeMiddlewareStates (/Users/Ilia_Naryshkin/projects/langchain/node_modules/langchain/src/agents/nodes/utils.ts:47:10)
+    at async ReactAgent.#initializeMiddlewareStates (/Users/Ilia_Naryshkin/projects/langchain/node_modules/langchain/src/agents/ReactAgent.ts:958:27)
+    at async ReactAgent.invoke (/Users/Ilia_Naryshkin/projects/langchain/node_modules/langchain/src/agents/ReactAgent.ts:1064:30)
+    at async <anonymous> (/Users/Ilia_Naryshkin/projects/langchain/src/short-term-memory.ts:63:16)
+
+Node.js v22.14.0
