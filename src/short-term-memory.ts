@@ -51,13 +51,13 @@ const trimMiddleware = createMiddleware({
 
 const sumMiddleware = summarizationMiddleware({
   name: "Summarization",
-  model: "anthropic:claude-sonnet-4-5",
+  model: "anthropic:claude-haiku-4-5",
   maxTokensBeforeSummary: 4000,
   messagesToKeep: 20,
 });
 
 const agent = createAgent({
-  model: "anthropic:claude-sonnet-4-5",
+  model: "anthropic:claude-haiku-4-5",
   tools: [],
   middleware: [
     //

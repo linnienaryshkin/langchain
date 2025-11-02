@@ -1,0 +1,1084 @@
+{
+  "time": "2025-11-02T10:43:40.530Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_014nyvinV3L6t86SThh7zYad",
+              "type": "message",
+              "role": "assistant"
+            },
+            "tool_call_chunks": [],
+            "usage_metadata": {
+              "input_tokens": 582,
+              "output_tokens": 26,
+              "total_tokens": 608,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model_provider": "anthropic",
+              "usage": {
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "service_tier": "standard"
+              }
+            },
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.532Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "type": "tool_use",
+                "id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                "name": "get_weather",
+                "input": ""
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [
+              {
+                "id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                "index": 0,
+                "name": "get_weather",
+                "args": ""
+              }
+            ],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [
+              {
+                "name": "get_weather",
+                "args": {},
+                "id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                "type": "tool_call"
+              }
+            ],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.532Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "input": "",
+                "type": "input_json_delta"
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [
+              {
+                "index": 0,
+                "args": ""
+              }
+            ],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [],
+            "invalid_tool_calls": [
+              {
+                "name": "",
+                "args": "{}",
+                "error": "Malformed args.",
+                "type": "invalid_tool_call"
+              }
+            ]
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.615Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "input": "{\"input\": \"S",
+                "type": "input_json_delta"
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [
+              {
+                "index": 0,
+                "args": "{\"input\": \"S"
+              }
+            ],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [],
+            "invalid_tool_calls": [
+              {
+                "name": "",
+                "args": "{\"input\": \"S",
+                "error": "Malformed args.",
+                "type": "invalid_tool_call"
+              }
+            ]
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.618Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "input": "an Fran",
+                "type": "input_json_delta"
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [
+              {
+                "index": 0,
+                "args": "an Fran"
+              }
+            ],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [],
+            "invalid_tool_calls": [
+              {
+                "name": "",
+                "args": "an Fran",
+                "error": "Malformed args.",
+                "type": "invalid_tool_call"
+              }
+            ]
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.625Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "input": "cisco\"}",
+                "type": "input_json_delta"
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [
+              {
+                "index": 0,
+                "args": "cisco\"}"
+              }
+            ],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [],
+            "invalid_tool_calls": [
+              {
+                "name": "",
+                "args": "cisco\"}",
+                "error": "Malformed args.",
+                "type": "invalid_tool_call"
+              }
+            ]
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.635Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [],
+            "additional_kwargs": {
+              "stop_reason": "tool_use",
+              "stop_sequence": null
+            },
+            "tool_call_chunks": [],
+            "usage_metadata": {
+              "input_tokens": 0,
+              "output_tokens": 55,
+              "total_tokens": 55,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {},
+            "id": "msg_014nyvinV3L6t86SThh7zYad",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 1,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "__pregel_task_id": "223759d8-cd78-54e5-8f55-75439b7ab638",
+          "checkpoint_ns": "model_request:223759d8-cd78-54e5-8f55-75439b7ab638",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.653Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "updates",
+      {
+        "model_request": {
+          "messages": [
+            {
+              "lc": 1,
+              "type": "constructor",
+              "id": [
+                "langchain_core",
+                "messages",
+                "AIMessageChunk"
+              ],
+              "kwargs": {
+                "content": [
+                  {
+                    "index": 0,
+                    "type": "tool_use",
+                    "id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                    "name": "get_weather",
+                    "input": "{\"input\": \"San Francisco\"}"
+                  }
+                ],
+                "additional_kwargs": {
+                  "model": "claude-haiku-4-5-20251001",
+                  "id": "msg_014nyvinV3L6t86SThh7zYad",
+                  "type": "message",
+                  "role": "assistant",
+                  "stop_reason": "tool_use",
+                  "stop_sequence": null
+                },
+                "response_metadata": {
+                  "model_provider": "anthropic",
+                  "usage": {
+                    "cache_creation_input_tokens": 0,
+                    "cache_read_input_tokens": 0,
+                    "cache_creation": {
+                      "ephemeral_5m_input_tokens": 0,
+                      "ephemeral_1h_input_tokens": 0
+                    },
+                    "service_tier": "standard"
+                  }
+                },
+                "tool_call_chunks": [
+                  {
+                    "id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                    "index": 0,
+                    "name": "get_weather",
+                    "args": "{\"input\": \"San Francisco\"}"
+                  }
+                ],
+                "id": "msg_014nyvinV3L6t86SThh7zYad",
+                "usage_metadata": {
+                  "input_tokens": 582,
+                  "output_tokens": 81,
+                  "total_tokens": 663,
+                  "input_token_details": {
+                    "cache_read": 0,
+                    "cache_creation": 0
+                  },
+                  "output_token_details": {}
+                },
+                "tool_calls": [
+                  {
+                    "name": "get_weather",
+                    "args": {
+                      "input": "San Francisco"
+                    },
+                    "id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                    "type": "tool_call"
+                  }
+                ],
+                "invalid_tool_calls": [],
+                "name": "model"
+              }
+            }
+          ],
+          "_privateState": {
+            "threadLevelCallCount": 1,
+            "runModelCallCount": 0
+          }
+        }
+      }
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:40.655Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "custom",
+      "Looking up weather data..."
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:41.657Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "custom",
+      "Weather data found!"
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:41.660Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "The weather is sunny!",
+            "tool_call_id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+            "name": "get_weather",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "run-ebe0af47-1f0d-4df4-a4c0-c3d86f229be7-tool-toolu_017QYJZhaeKuMHitpaXvFaGj"
+          }
+        },
+        {
+          "tags": [
+            "graph:step:2"
+          ],
+          "name": "tools",
+          "langgraph_step": 2,
+          "langgraph_node": "tools",
+          "langgraph_triggers": [
+            "__pregel_push"
+          ],
+          "langgraph_path": [
+            "__pregel_push",
+            0
+          ],
+          "langgraph_checkpoint_ns": "tools:09b16f0f-fee5-5589-a7f5-22f1052fa7f5",
+          "__pregel_task_id": "09b16f0f-fee5-5589-a7f5-22f1052fa7f5",
+          "checkpoint_ns": "tools:09b16f0f-fee5-5589-a7f5-22f1052fa7f5"
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:41.661Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "updates",
+      {
+        "tools": {
+          "messages": [
+            {
+              "lc": 1,
+              "type": "constructor",
+              "id": [
+                "langchain_core",
+                "messages",
+                "ToolMessage"
+              ],
+              "kwargs": {
+                "status": "success",
+                "content": "The weather is sunny!",
+                "tool_call_id": "toolu_017QYJZhaeKuMHitpaXvFaGj",
+                "name": "get_weather",
+                "metadata": {},
+                "additional_kwargs": {},
+                "response_metadata": {},
+                "id": "run-ebe0af47-1f0d-4df4-a4c0-c3d86f229be7-tool-toolu_017QYJZhaeKuMHitpaXvFaGj"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:42.813Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+              "type": "message",
+              "role": "assistant"
+            },
+            "tool_call_chunks": [],
+            "usage_metadata": {
+              "input_tokens": 653,
+              "output_tokens": 8,
+              "total_tokens": 661,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model_provider": "anthropic",
+              "usage": {
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "service_tier": "standard"
+              }
+            },
+            "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 3,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "__pregel_task_id": "ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:42.813Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "type": "text",
+                "text": ""
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 3,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "__pregel_task_id": "ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:42.813Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "type": "text",
+                "text": "The weather in San Francisco is sunny!"
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 3,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "__pregel_task_id": "ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:42.921Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "index": 0,
+                "type": "text",
+                "text": " ☀️"
+              }
+            ],
+            "additional_kwargs": {},
+            "tool_call_chunks": [],
+            "response_metadata": {
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 3,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "__pregel_task_id": "ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:42.943Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "messages",
+      [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessageChunk"
+          ],
+          "kwargs": {
+            "content": [],
+            "additional_kwargs": {
+              "stop_reason": "end_turn",
+              "stop_sequence": null
+            },
+            "tool_call_chunks": [],
+            "usage_metadata": {
+              "input_tokens": 0,
+              "output_tokens": 15,
+              "total_tokens": 15,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {},
+            "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+            "tool_calls": [],
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "tags": [
+            "seq:step:2"
+          ],
+          "langgraph_step": 3,
+          "langgraph_node": "model_request",
+          "langgraph_triggers": [
+            "branch:to:model_request"
+          ],
+          "langgraph_path": [
+            "__pregel_pull",
+            "model_request"
+          ],
+          "langgraph_checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "__pregel_task_id": "ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "checkpoint_ns": "model_request:ab50f47a-cf61-50dc-9ffd-90af768a879a",
+          "ls_provider": "anthropic",
+          "ls_model_name": "claude-haiku-4-5",
+          "ls_model_type": "chat",
+          "ls_max_tokens": 2048
+        }
+      ]
+    ]
+  }
+}
+{
+  "time": "2025-11-02T10:43:42.946Z",
+  "level": "INFO",
+  "message": "streaming chunk",
+  "params": {
+    "chunk": [
+      "updates",
+      {
+        "model_request": {
+          "messages": [
+            {
+              "lc": 1,
+              "type": "constructor",
+              "id": [
+                "langchain_core",
+                "messages",
+                "AIMessageChunk"
+              ],
+              "kwargs": {
+                "content": [
+                  {
+                    "index": 0,
+                    "type": "text",
+                    "text": "The weather in San Francisco is sunny! ☀️"
+                  }
+                ],
+                "additional_kwargs": {
+                  "model": "claude-haiku-4-5-20251001",
+                  "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+                  "type": "message",
+                  "role": "assistant",
+                  "stop_reason": "end_turn",
+                  "stop_sequence": null
+                },
+                "response_metadata": {
+                  "model_provider": "anthropic",
+                  "usage": {
+                    "cache_creation_input_tokens": 0,
+                    "cache_read_input_tokens": 0,
+                    "cache_creation": {
+                      "ephemeral_5m_input_tokens": 0,
+                      "ephemeral_1h_input_tokens": 0
+                    },
+                    "service_tier": "standard"
+                  }
+                },
+                "tool_call_chunks": [],
+                "id": "msg_01RZWhQjM2KDVr1JUXFbFWFs",
+                "usage_metadata": {
+                  "input_tokens": 653,
+                  "output_tokens": 23,
+                  "total_tokens": 676,
+                  "input_token_details": {
+                    "cache_read": 0,
+                    "cache_creation": 0
+                  },
+                  "output_token_details": {}
+                },
+                "tool_calls": [],
+                "invalid_tool_calls": [],
+                "name": "model"
+              }
+            }
+          ],
+          "_privateState": {
+            "threadLevelCallCount": 2,
+            "runModelCallCount": 1
+          }
+        }
+      }
+    ]
+  }
+}
