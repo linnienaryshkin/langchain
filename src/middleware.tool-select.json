@@ -1,0 +1,193 @@
+{
+  "time": "2025-11-02T17:19:46.902Z",
+  "level": "INFO",
+  "message": "Tool select result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "Open an issue titled 'Bug: where are the cats' in the repository `its-a-cats-game`",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "391e1b21-c7c4-4662-8ffb-b8f02a1baebc"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "type": "tool_use",
+                "id": "toolu_01THwDrRPafvCJUkvpWwSqPM",
+                "name": "github_create_issue",
+                "input": {
+                  "repo": "its-a-cats-game",
+                  "title": "Bug: where are the cats"
+                }
+              }
+            ],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01TB1pbhjxSy1Tx4s7ZYu19F",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 627,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 84,
+                "service_tier": "standard"
+              }
+            },
+            "tool_calls": [
+              {
+                "name": "github_create_issue",
+                "args": {
+                  "repo": "its-a-cats-game",
+                  "title": "Bug: where are the cats"
+                },
+                "id": "toolu_01THwDrRPafvCJUkvpWwSqPM",
+                "type": "tool_call"
+              }
+            ],
+            "usage_metadata": {
+              "input_tokens": 627,
+              "output_tokens": 84,
+              "total_tokens": 711,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01TB1pbhjxSy1Tx4s7ZYu19F",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 627,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 84,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01TB1pbhjxSy1Tx4s7ZYu19F",
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "{\n  \"url\": \"https://github.com/its-a-cats-game/issues/1\",\n  \"title\": \"Bug: where are the cats\"\n}",
+            "tool_call_id": "toolu_01THwDrRPafvCJUkvpWwSqPM",
+            "name": "github_create_issue",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "51026abe-bae6-47b7-9742-fb1bcf9fdf1d"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "Done! I've successfully created an issue titled \"Bug: where are the cats\" in the `its-a-cats-game` repository. The issue has been created and is available at: https://github.com/its-a-cats-game/issues/1",
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01HSfAXKn8PsE24ouNfWCn2u",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 761,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 60,
+                "service_tier": "standard"
+              }
+            },
+            "usage_metadata": {
+              "input_tokens": 761,
+              "output_tokens": 60,
+              "total_tokens": 821,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01HSfAXKn8PsE24ouNfWCn2u",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 761,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 60,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01HSfAXKn8PsE24ouNfWCn2u",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        }
+      ]
+    }
+  }
+}

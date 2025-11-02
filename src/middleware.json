@@ -1,0 +1,253 @@
+{
+  "time": "2025-11-02T17:17:41.184Z",
+  "level": "INFO",
+  "message": "Middleware result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "SystemMessage"
+          ],
+          "kwargs": {
+            "content": "You are a weather expert",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "59271587-e729-4748-b4ca-ef1670de81ae"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "What is the weather in Tokyo?",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "6b66eaba-a21d-440f-bd40-34c04c4c118d"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "I don't have access to real-time weather data, so I can't tell you the current weather in Tokyo.",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "d3d789fa-db56-4ec3-bc33-4b755ad9704c"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "My email is linnie@example.com",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "d6551153-6b3a-4603-ad58-c458076b7105"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "Delete weather data older than 30 days from the database table 'weather_data'",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "81a520f6-ea0c-46d0-a473-005d8ca3ea32"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "type": "tool_use",
+                "id": "toolu_01HToZBmCLDaDRa5k7EQoT4K",
+                "name": "delete_old_records",
+                "input": {
+                  "input": "weather_data 30 days"
+                }
+              }
+            ],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_012eB9eQgoDMNvnD99NDUj5i",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 652,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 62,
+                "service_tier": "standard"
+              }
+            },
+            "tool_calls": [
+              {
+                "name": "delete_old_records",
+                "args": {
+                  "input": "weather_data 30 days"
+                },
+                "id": "toolu_01HToZBmCLDaDRa5k7EQoT4K",
+                "type": "tool_call"
+              }
+            ],
+            "usage_metadata": {
+              "input_tokens": 652,
+              "output_tokens": 62,
+              "total_tokens": 714,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_012eB9eQgoDMNvnD99NDUj5i",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 652,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 62,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_012eB9eQgoDMNvnD99NDUj5i",
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "Old records deleted",
+            "tool_call_id": "toolu_01HToZBmCLDaDRa5k7EQoT4K",
+            "name": "delete_old_records",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "712d8f02-36b9-4ccd-bf40-b61669c045df"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "Done! I've successfully deleted weather data older than 30 days from the 'weather_data' database table. The old records have been removed to help keep your database clean and optimized.",
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_016K9Eo1jiDnGWjq38fTYbwj",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 729,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 44,
+                "service_tier": "standard"
+              }
+            },
+            "usage_metadata": {
+              "input_tokens": 729,
+              "output_tokens": 44,
+              "total_tokens": 773,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_016K9Eo1jiDnGWjq38fTYbwj",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 729,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 44,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_016K9Eo1jiDnGWjq38fTYbwj",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        }
+      ]
+    }
+  }
+}
