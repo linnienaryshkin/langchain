@@ -1,0 +1,145 @@
+{
+  "time": "2025-11-03T09:08:54.909Z",
+  "level": "INFO",
+  "message": "Structured output result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "Analyze this review: 'Great product: 5 out of 5 stars. Fast shipping, but expensive'",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "5bf84994-05ed-4f18-b465-b58df47b0229"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "type": "tool_use",
+                "id": "toolu_01NYE5vCLazwXG44eyzWgiVg",
+                "name": "extract-1",
+                "input": {
+                  "sentiment": "positive",
+                  "rating": 5,
+                  "keyPoints": [
+                    "great product",
+                    "fast shipping",
+                    "expensive"
+                  ]
+                }
+              }
+            ],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01TAZAMZM1uPN6w5wXHndP4Y",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 787,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 83,
+                "service_tier": "standard"
+              }
+            },
+            "tool_calls": [
+              {
+                "name": "extract-1",
+                "args": {
+                  "sentiment": "positive",
+                  "rating": 5,
+                  "keyPoints": [
+                    "great product",
+                    "fast shipping",
+                    "expensive"
+                  ]
+                },
+                "id": "toolu_01NYE5vCLazwXG44eyzWgiVg",
+                "type": "tool_call"
+              }
+            ],
+            "usage_metadata": {
+              "input_tokens": 787,
+              "output_tokens": 83,
+              "total_tokens": 870,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01TAZAMZM1uPN6w5wXHndP4Y",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 787,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 83,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01TAZAMZM1uPN6w5wXHndP4Y",
+            "invalid_tool_calls": []
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "Product review captured and added to database!",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "6ed23db3-51c2-4c1b-bdff-da0134df69cb"
+          }
+        }
+      ],
+      "structuredResponse": {
+        "sentiment": "positive",
+        "rating": 5,
+        "keyPoints": [
+          "great product",
+          "fast shipping",
+          "expensive"
+        ]
+      }
+    }
+  }
+}
