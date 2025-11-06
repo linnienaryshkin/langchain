@@ -1,6 +1,6 @@
 # [LangChain](https://github.com/linnienaryshkin/langchain)
 
-Sandbox for the [LandChain framework](https://docs.langchain.com/oss/javascript/langchain/overview) and my overall learning of LLM topics.
+Sandbox for the [LandChain framework](https://docs.langchain.com/oss/javascript/langchain/overview) and LLM overall topics learning.
 
 ---
 

@@ -1,0 +1,15 @@
+{
+  "time": "2025-11-06T10:14:31.385Z",
+  "level": "ERROR",
+  "message": "MCP connection error",
+  "params": {
+    "error": "Failed to create SSE transport for server \"weather, url: http://localhost:8000/mcp\": Error: Error POSTing to endpoint (HTTP 404): <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /mcp</pre>\n</body>\n</html>\n",
+    "serverName": "weather",
+    "stack": "MCPClientError: Failed to create SSE transport for server \"weather, url: http://localhost:8000/mcp\": Error: Error POSTing to endpoint (HTTP 404): <!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /mcp</pre>\n</body>\n</html>\n\n    at MultiServerMCPClient._initializeSSEConnection (/Users/Ilia_Naryshkin/projects/langchain/node_modules/@langchain/mcp-adapters/src/client.ts:667:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async MultiServerMCPClient.initializeConnections (/Users/Ilia_Naryshkin/projects/langchain/node_modules/@langchain/mcp-adapters/src/client.ts:267:11)\n    at async MultiServerMCPClient.getTools (/Users/Ilia_Naryshkin/projects/langchain/node_modules/@langchain/mcp-adapters/src/client.ts:322:7)\n    at async <anonymous> (/Users/Ilia_Naryshkin/projects/langchain/src/mcp/mcp.ts:59:11)"
+  }
+}
+{
+  "time": "2025-11-06T10:14:31.386Z",
+  "level": "ERROR",
+  "message": "❌ Weather server connection failed!\n   Please ensure the weather server is running in a separate terminal:\n   tsx src/mcp/weather-server.ts\n   Then run this script again."
+}
