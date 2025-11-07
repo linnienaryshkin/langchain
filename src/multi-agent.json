@@ -1,0 +1,191 @@
+{
+  "time": "2025-11-07T10:37:44.679Z",
+  "level": "INFO",
+  "message": "Multi-agent result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "What is the weather in Tokyo?",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "07fb67f8-f55e-4a8f-9c74-f07076ed24db"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "type": "tool_use",
+                "id": "toolu_01EJLhCbRv7Zre1E5ABPi3Lj",
+                "name": "call_subagent1",
+                "input": {
+                  "query": "What is the weather in Tokyo?"
+                }
+              }
+            ],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01Y5VCYnyXVQbwtv3euCvgy9",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 617,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 63,
+                "service_tier": "standard"
+              }
+            },
+            "tool_calls": [
+              {
+                "name": "call_subagent1",
+                "args": {
+                  "query": "What is the weather in Tokyo?"
+                },
+                "id": "toolu_01EJLhCbRv7Zre1E5ABPi3Lj",
+                "type": "tool_call"
+              }
+            ],
+            "usage_metadata": {
+              "input_tokens": 617,
+              "output_tokens": 63,
+              "total_tokens": 680,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01Y5VCYnyXVQbwtv3euCvgy9",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 617,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 63,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01Y5VCYnyXVQbwtv3euCvgy9",
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "I don't have access to real-time information, so I can't tell you the current weather in Tokyo.\n\nTo find out the weather in Tokyo right now, you can:\n\n- **Google Weather** - Search \"Tokyo weather\"\n- **Weather websites** - Weather.com, AccuWeather, or your local weather service\n- **Weather apps** - Most smartphones have built-in weather apps\n- **Japan Meteorological Agency** - The official source for Japanese weather (jma.go.jp)\n\nIs there anything else about Tokyo I can help you with?",
+            "tool_call_id": "toolu_01EJLhCbRv7Zre1E5ABPi3Lj",
+            "name": "call_subagent1",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "639b001b-f257-4e7b-888b-b14dad66cce7"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "I apologize, but I don't have access to real-time weather data. The subagent I have available cannot retrieve current weather information for Tokyo.\n\nTo find the current weather in Tokyo, you can try:\n\n- **Google Weather** - Simply search \"Tokyo weather\"\n- **Weather websites** - Weather.com, AccuWeather, Weather.gov, or similar services\n- **Weather apps** - Most smartphones have built-in weather applications\n- **Japan Meteorological Agency (JMA)** - The official Japanese weather service at jma.go.jp\n\nIs there anything else I can help you with regarding Tokyo or general information?",
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_012m4evzFtxkWEqiTKzoKPce",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 814,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 141,
+                "service_tier": "standard"
+              }
+            },
+            "usage_metadata": {
+              "input_tokens": 814,
+              "output_tokens": 141,
+              "total_tokens": 955,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_012m4evzFtxkWEqiTKzoKPce",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 814,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 141,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_012m4evzFtxkWEqiTKzoKPce",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        }
+      ]
+    }
+  }
+}
