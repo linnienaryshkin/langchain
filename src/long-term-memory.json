@@ -1,0 +1,273 @@
+{
+  "time": "2025-11-07T10:46:22.062Z",
+  "level": "INFO",
+  "message": "Long-term memory result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "I am an authenticated user",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "715361b0-071e-47a4-80c0-91979a09ed96"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "Get my user info",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "09b7616f-c78c-496c-ae8a-0a6f36e6627b"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "My name is Linnie and I speak Russia",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "a96ad950-6755-48bb-add0-ef49565acdb1"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "Save my user info",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "310e7057-2ecf-4ac2-80d1-3029d1ba6081"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": [
+              {
+                "type": "text",
+                "text": "I'll help you get your user info and then save your information with the name \"Linnie\" and language \"Russia\"."
+              },
+              {
+                "type": "tool_use",
+                "id": "toolu_013qZzYAxvm1wCnfoSV5gF7Z",
+                "name": "getUserInfo",
+                "input": {}
+              },
+              {
+                "type": "tool_use",
+                "id": "toolu_01Fj7f7hzwBNEKrs3HaoBWhP",
+                "name": "save_user_info",
+                "input": {
+                  "name": "Linnie",
+                  "language": "Russia"
+                }
+              }
+            ],
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01LE55aj8nszPtzxJnwx5XGq",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 691,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 119,
+                "service_tier": "standard"
+              }
+            },
+            "tool_calls": [
+              {
+                "name": "getUserInfo",
+                "args": {},
+                "id": "toolu_013qZzYAxvm1wCnfoSV5gF7Z",
+                "type": "tool_call"
+              },
+              {
+                "name": "save_user_info",
+                "args": {
+                  "name": "Linnie",
+                  "language": "Russia"
+                },
+                "id": "toolu_01Fj7f7hzwBNEKrs3HaoBWhP",
+                "type": "tool_call"
+              }
+            ],
+            "usage_metadata": {
+              "input_tokens": 691,
+              "output_tokens": 119,
+              "total_tokens": 810,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01LE55aj8nszPtzxJnwx5XGq",
+              "stop_reason": "tool_use",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 691,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 119,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01LE55aj8nszPtzxJnwx5XGq",
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "{\"name\":\"Linnie\",\"language\":\"Russia\"}",
+            "tool_call_id": "toolu_013qZzYAxvm1wCnfoSV5gF7Z",
+            "name": "getUserInfo",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "5341cb40-f421-4bb3-8408-3503e27e914a"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "ToolMessage"
+          ],
+          "kwargs": {
+            "status": "success",
+            "content": "Successfully saved user info.",
+            "tool_call_id": "toolu_01Fj7f7hzwBNEKrs3HaoBWhP",
+            "name": "save_user_info",
+            "metadata": {},
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "44e1233f-328b-4164-8e85-75a9b8db4328"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "Perfect! I've completed both tasks:\n\n**Your Current User Info:**\n- Name: Linnie\n- Language: Russia\n\n**Save Status:** ✓ Successfully saved your user info\n\nYour profile has been updated with your name as \"Linnie\" and your language preference as \"Russia\".",
+            "additional_kwargs": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01Wh4VhBNPreDugkAZNyhT59",
+              "type": "message",
+              "role": "assistant",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 889,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 67,
+                "service_tier": "standard"
+              }
+            },
+            "usage_metadata": {
+              "input_tokens": 889,
+              "output_tokens": 67,
+              "total_tokens": 956,
+              "input_token_details": {
+                "cache_creation": 0,
+                "cache_read": 0
+              }
+            },
+            "response_metadata": {
+              "model": "claude-haiku-4-5-20251001",
+              "id": "msg_01Wh4VhBNPreDugkAZNyhT59",
+              "stop_reason": "end_turn",
+              "stop_sequence": null,
+              "usage": {
+                "input_tokens": 889,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cache_creation": {
+                  "ephemeral_5m_input_tokens": 0,
+                  "ephemeral_1h_input_tokens": 0
+                },
+                "output_tokens": 67,
+                "service_tier": "standard"
+              },
+              "type": "message",
+              "role": "assistant",
+              "model_provider": "anthropic"
+            },
+            "id": "msg_01Wh4VhBNPreDugkAZNyhT59",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "name": "model"
+          }
+        }
+      ]
+    }
+  }
+}
