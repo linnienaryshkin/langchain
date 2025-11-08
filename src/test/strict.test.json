@@ -1,0 +1,11 @@
+{
+  "time": "2025-11-08T17:18:59.262Z",
+  "level": "INFO",
+  "message": "Evaluation",
+  "params": {
+    "evaluation": {
+      "key": "trajectory_strict_match",
+      "score": true
+    }
+  }
+}

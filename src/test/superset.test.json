@@ -1,0 +1,11 @@
+{
+  "time": "2025-11-08T17:26:45.874Z",
+  "level": "INFO",
+  "message": "Evaluation",
+  "params": {
+    "evaluation": {
+      "key": "trajectory_superset_match",
+      "score": true
+    }
+  }
+}
