@@ -1,0 +1,43 @@
+{
+  "time": "2025-11-08T17:39:15.017Z",
+  "level": "INFO",
+  "message": "Result",
+  "params": {
+    "result": {
+      "messages": [
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "HumanMessage"
+          ],
+          "kwargs": {
+            "content": "hi!",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "b58f2486-edf6-4fd1-9bf6-3abcd0a01581"
+          }
+        },
+        {
+          "lc": 1,
+          "type": "constructor",
+          "id": [
+            "langchain_core",
+            "messages",
+            "AIMessage"
+          ],
+          "kwargs": {
+            "content": "hello world",
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "id": "2a09b046-b768-4e0b-83d3-a202a6804b4a"
+          }
+        }
+      ]
+    }
+  }
+}
