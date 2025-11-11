@@ -1,0 +1,69 @@
+{
+  "time": "2025-11-11T09:30:05.787Z",
+  "level": "INFO",
+  "message": "Topic",
+  "params": {
+    "topic": "cat"
+  }
+}
+{
+  "time": "2025-11-11T09:30:06.792Z",
+  "level": "INFO",
+  "message": "Essay",
+  "params": {
+    "essay": "An essay about topic: cat"
+  }
+}
+{
+  "time": "2025-11-11T09:30:06.801Z",
+  "level": "INFO",
+  "message": "Result 1",
+  "params": {
+    "result1": {
+      "__interrupt__": [
+        {
+          "id": "a7a9f23f5b1545149782bb8e124094ca",
+          "value": {
+            "essay": "An essay about topic: cat",
+            "action": "Please approve/reject the essay"
+          }
+        }
+      ]
+    }
+  }
+}
+{
+  "time": "2025-11-11T09:30:06.802Z",
+  "level": "INFO",
+  "message": "Topic",
+  "params": {
+    "topic": "cat"
+  }
+}
+{
+  "time": "2025-11-11T09:30:06.803Z",
+  "level": "INFO",
+  "message": "Essay",
+  "params": {
+    "essay": "An essay about topic: cat"
+  }
+}
+{
+  "time": "2025-11-11T09:30:06.803Z",
+  "level": "INFO",
+  "message": "Is approved",
+  "params": {
+    "isApproved": true
+  }
+}
+{
+  "time": "2025-11-11T09:30:06.806Z",
+  "level": "INFO",
+  "message": "Result 2",
+  "params": {
+    "result2": {
+      "essay": "An essay about topic: cat",
+      "isApproved": true
+    }
+  }
+}
