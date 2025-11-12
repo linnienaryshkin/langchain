@@ -18,7 +18,11 @@
 ### Algorithms
 
 - **Supervised learning** | The model is trained on labeled data.
+  - Classification | the model is trained to classify data into a specific category (Fraud detection, Image classification, etc.)
+  - Regression | the model is trained to predict a continuous value (Weather forecasting, Stock price prediction, etc.)
 - **Unsupervised learning** | The model is trained on unlabeled data.
+  - Clustering | the model is trained to group data into clusters (Customer segmentation, etc.)
+  - Dimensionality reduction | the model is trained to reduce the number of features in the data (Meaningful compression, Big data visualization, etc.)
 - **Semi-supervised learning** | The model is trained on a combination of labeled and unlabeled data.
 - **Reinforcement learning** | The model is trained on a combination of labeled and unlabeled data.
 
