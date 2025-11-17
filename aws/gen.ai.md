@@ -85,3 +85,11 @@
 - Amazon Bedrock | a service that provides a way to use pre-trained models from various providers
 - Amazon Q | a service that provides a way to ask questions and get answers from a model
 - Amazon Q Developer | provides ML–powered code recommendations to accelerate development of C#, Java, JavaScript, Python, and TypeScript applications
+
+## Generative AI Development
+
+1. Defining a Use Case
+2. Selecting an FM (foundation model) | Cost, Modality, Latency, Multi-lingual support, Model size, Model complexity, Customization, Input/output length, Responsibility considerations, Deployment and integration
+3. Improving the Performance of an FM | Prompt engineering, RAG, Fine-tuning, model from scratch
+4. Evaluating an FM | Human evaluation, Benchmark datasets (GLUE, SuperGLUE, SQuAD, WMT), Automated metrics (ROUGE, BLEU, and BERTScore)
+5. Deploying the Application
