@@ -5,7 +5,7 @@
 - Amazon SageMaker AI | build, train, and deploy machine learning models
   - SageMaker Model Cards | documentation of the model
   - SageMaker JumpStart | pre-trained, open source models
-  - SageMaker Ground Truth | label data for machine learning models
+  - SageMaker Ground Truth | creation of high-quality labeled datasets by incorporating human feedback in the labeling process, which can be used to improve reinforcement learning models
   - SageMaker Canvas | build machine learning models without writing code
   - SageMaker Studio | IDE for machine learning
   - SageMaker Clarify | explain the model's decisions and detect bias
@@ -15,10 +15,15 @@
   - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data
   - SageMaker MLflow | track, organize, view, analyze, and compare iterative ML experimentation to gain comparative insights and register and deploy your best-performing models
   - SageMaker Model Dashboard | monitor and manage your models in real-time
+  - SageMaker Inference endpoint | allows clients to invoke deployed models
+  - SageMaker Model Monitor | monitor the performance of your models in real-time
 - Amazon Bedrock | pre-trained models, orchestration, MCP
   - Amazon Bedrock Guardrails | detects sensitive information such as personally identifiable information (PIIs) in input prompts or model responses
   - Amazon Bedrock Agents | build agents that can perform tasks such as customer service, data analysis, and more
+  - Amazon Bedrock Model Evaluation | preparing data, training models, selecting appropriate metrics, testing and analyzing results
 - Amazon Q
+  - Amazon Q in Connect | contact center service from AWS
+  - Amazon Q in QuickSight | allows business analysts to use natural language to build BI dashboards
   - Amazon Q Developer | conversational assistant for developers that provides code assistance, security scanning, AWS integration, and agentic capabilities for automating multi-step tasks
   - Amazon Q Business | generative AI assistant for business users that connects to enterprise data sources, generates content, automates tasks, and enables building AI-driven applications
 - Amazon Lex | build chatbots and voice assistants
@@ -31,11 +36,14 @@
 - Amazon Inspector | security and compliance of AWS resources
 - AWS AI Service Cards | documentation of the AI services
 - Amazon Personalize | build recommendation systems
+- Amazon Mechanical Turk (MTurk) | marketplace for outsourcing various tasks to a distributed workforce
+- Amazon Augmented AI (Amazon A2I) | human review workflows for machine learning predictions
 
 - Amazon Macie | protect sensitive data in S3
 - AWS Config | configuration of AWS resources
 - AWS Artifact | security and compliance documentation for the AWS Cloud
 - AWS Trusted Advisor | recommendations for cost optimization, security, and resilience
+- AWS Audit Manager | automate the collection of evidence to continuously audit your AWS usage
 
 ## Metrics
 
@@ -55,15 +63,21 @@
 
 ## Data Preparation and Training
 
-- Feature engineering | enhances the data by increasing the number of variables in the training dataset
+- Feature Engineering | selecting, modifying, or creating features from raw data to improve the performance of machine learning models
+  - For structured data typically includes tasks like normalization, handling missing values, and encoding categorical variables
+  - For unstructured data, such as text or images, feature engineering involves different tasks like tokenization (breaking down text into tokens), vectorization (converting text or images into numerical vectors), and extracting features that can represent the content meaningfully
 - Data collection | label, ingest, and aggregate data
 - Instruction-based fine-tuning | labeled examples that are formatted as prompt-response pairs and that are phrased as instructions
 
 ## AI concepts
 
 - Overfitting | when a model performs well on training data but fails to generalize to new data.
+  - To prevent overfitting, techniques such as early stopping, cross-validation, regularization, and pruning can be used.
+  - high variance can cause overfitting
 - Underfitting | when a model is too simple to capture the underlying patterns in the data.
+  - high bias can cause underfitting
 - Explainability | the ability to understand how a model arrives at a prediction.
+- Interpretability | understanding the internal mechanisms of a machine learning model
 - Bias | unfair prejudice or preference that favors or disfavors a person or group.
   - Sampling bias | the selection of a sample that is not representative of the population
   - Measurement bias | the measurement of a variable that is not accurate or reliable
@@ -79,6 +93,13 @@
 - High variance | the model is too complex and fits the training data too closely, leading to overfitting
 - Shapley values | a local interpretability method that explains individual predictions by assigning each feature a contribution score based on its marginal effect on the prediction. This method is useful for understanding the impact of each feature on a specific instance's prediction.
 - Partial Dependence Plots (PDP) | a global interpretability method that provides a view of the model’s behavior by illustrating how the predicted outcome changes as a single feature is varied across its range, holding all other features constant. PDPs help understand the overall relationship between a feature and the model output across the entire dataset.
+- Risks: Hallucination, Toxicity, Poisoning, Prompt Leaking
+- Decision Trees: Given the same input data, a decision tree will always follow the same path and produce the same output
+- Bayesian Networks: These models represent probabilistic relationships among variables and provide probabilities for different outcomes
+- Dataset
+  - training set | 80% of the data | train the model
+  - validation set | 10% of the data | tuning hyperparameters
+  - test set | 10% of the data | evaluating the final performance on unseen data
 
 ## Prompt Parameters
 
@@ -106,20 +127,23 @@
 - Transfer learning | applying knowledge gained from one domain to enhance performance in another related domain
 - Supervised learning | using the latest datasets containing both positive and negative customer interactions to improve the chatbot's response quality
   - Linear regression
-  - Neural network
+  - Neural network (e.g. predicting a digit from a handwritten image)
   - Forecasting, DeepAR | predict future values based on past values
   - Classification | classify data into a specific category
 - Semi-supervised learning
   - Document classification
+  - Fraud identification
+  - Sentiment analysis
 - Unsupervised learning
   - Association rule learning
-  - Clustering, k-means | group data into clusters based on similarity
+  - Clustering, k-means | group data into clusters based on similarity (e.g. identifying different types of network traffic to predict potential security incidents)
   - Anomaly detection (unsupervised learning algorithm), Random Cut Forest (RCF) | identify outliers in the data
+  - Dimensionality reduction | (e.g. it may blur out or crop background features in an image recognition application)
 - Incremental training | allows the chatbot to adapt over time by learning from new data without forgetting previously learned information
-- Diffusion Model | create new data by iteratively making controlled random changes to an initial data sample
+- Diffusion Model (DALL-E) | create new data by iteratively making controlled random changes to an initial data sample
 - Generative adversarial network (GAN) | work by training two neural networks in a competitive manner
 - Variational autoencoders (VAE) | encoder and decoder. The encoder neural network maps the input data to a mean and variance for each dimension of the latent space. It generates a random sample from a Gaussian (normal) distribution
-  - Transformer-based generative AI model | builds upon the encoder and decoder concepts of VAEs. Transformer-based models add more layers to the encoder to improve performance on text-based tasks like comprehension, translation, and creative writing.
+- Transformer-based generative AI model (GPT) | builds upon the encoder and decoder concepts of VAEs. Transformer-based models add more layers to the encoder to improve performance on text-based tasks like comprehension, translation, and creative writing.
 
 ## Embedding/Transformer models
 
@@ -129,3 +153,10 @@ Embedding models are algorithms trained to encapsulate information into dense re
 - Principal Component Analysis (PCA) | reducing the dimensions of large datasets to simplify them while retaining most of the variance in the data
 - Word2Vec | creates vector representations of words based on their co-occurrence in a given text
 - Singular Value Decomposition (SVD) | matrix decomposition method used in various applications like data compression and noise reduction
+
+---
+
+- Data residency | the location where the data is stored and processed
+- Data retention policy | the period for which the data is stored and processed
+- Data security | the protection of data from unauthorized access, use, disclosure, disruption, modification, or destruction
+- Data integrity | ensures the data is accurate, consistent, and unaltered
