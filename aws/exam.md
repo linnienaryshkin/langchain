@@ -23,7 +23,7 @@
   - Amazon Bedrock Model Evaluation | preparing data, training models, selecting appropriate metrics, testing and analyzing results
 - Amazon Q
   - Amazon Q in Connect | contact center service from AWS
-  - Amazon Q in QuickSight | allows business analysts to use natural language to build BI dashboards
+  - Amazon Q in QuickSight | business intelligence (BI) service that allows users to easily create and share interactive dashboards and visualizations from various data sources
   - Amazon Q Developer | conversational assistant for developers that provides code assistance, security scanning, AWS integration, and agentic capabilities for automating multi-step tasks
   - Amazon Q Business | generative AI assistant for business users that connects to enterprise data sources, generates content, automates tasks, and enables building AI-driven applications
 - Amazon Lex | build chatbots and voice assistants
@@ -40,7 +40,7 @@
 - Amazon Augmented AI (Amazon A2I) | human review workflows for machine learning predictions
 
 - Amazon Macie | protect sensitive data in S3
-- AWS Config | configuration of AWS resources
+- AWS Config | continuously assess, audit, and evaluate the configurations of your AWS resources
 - AWS Artifact | security and compliance documentation for the AWS Cloud
 - AWS Trusted Advisor | recommendations for cost optimization, security, and resilience
 - AWS Audit Manager | automate the collection of evidence to continuously audit your AWS usage
@@ -48,14 +48,17 @@
 ## Metrics
 
 - Classification accuracy | the ratio of correct predictions to all predictions (TP + TN) / (TP + TN + FP + FN)
-- Precision | the ratio of true positives to all predicted positives (TP) / (TP + FP)
-- Recall | the ratio of true positives to all actual positives (TP) / (TP + FN)
-- F1 score | harmonic mean of precision and recall: 2 * (precision * recall) / (precision + recall)
-- MSE (Mean Squared Error) | the average of the squares of the errors (y - y_pred)^2
+- classification systems
+  - Precision | the ratio of true positives to all predicted positives (TP) / (TP + FP)
+  - Recall | the ratio of true positives to all actual positives (TP) / (TP + FN)
+  - F1 score | harmonic mean of precision and recall: 2 * (precision * recall) / (precision + recall)
+- regression models
+  - MSE (Mean Squared Error) | the average of the squares of the errors (y - y_pred)^2
+  - RMSE (Root Mean Squared Error) | the square root of the average of the squares of the errors
+  - MAE (Mean Absolute Error) | the average of the absolute values of the errors
+  - R-squared
 - Confusion matrix | evaluate the performance of classification models by displaying the number of true positives, true negatives, false positives, and false negatives
 - Correlation matrix | measures the statistical correlation between different variables or features in a dataset, typically used to understand the relationships between continuous variables
-- Root Mean Squared Error (RMSE) | measure the average error in regression models by calculating the square root of the average squared differences between predicted and actual values
-- Mean Absolute Error (MAE) | measures the average magnitude of errors in a set of predictions without considering their direction
 - ROUGE-N (Recall-Oriented Understudy for Gisting Evaluation) | evaluate the quality of the generated text by comparing it to the reference text for n-grams
 - BERTScore | evaluate the quality of the generated text by comparing it to the reference text
 - Perplexity | probability of a model to generate a given sequence of words
@@ -66,6 +69,8 @@
 - Feature Engineering | selecting, modifying, or creating features from raw data to improve the performance of machine learning models
   - For structured data typically includes tasks like normalization, handling missing values, and encoding categorical variables
   - For unstructured data, such as text or images, feature engineering involves different tasks like tokenization (breaking down text into tokens), vectorization (converting text or images into numerical vectors), and extracting features that can represent the content meaningfully
+  - Feature extraction (e.g. Principal Component Analysis (PCA)) | transforming the data into a new feature space
+  - Feature selection | reduce the number of features
 - Data collection | label, ingest, and aggregate data
 - Instruction-based fine-tuning | labeled examples that are formatted as prompt-response pairs and that are phrased as instructions
 
@@ -94,7 +99,6 @@
 - Shapley values | a local interpretability method that explains individual predictions by assigning each feature a contribution score based on its marginal effect on the prediction. This method is useful for understanding the impact of each feature on a specific instance's prediction.
 - Partial Dependence Plots (PDP) | a global interpretability method that provides a view of the model’s behavior by illustrating how the predicted outcome changes as a single feature is varied across its range, holding all other features constant. PDPs help understand the overall relationship between a feature and the model output across the entire dataset.
 - Risks: Hallucination, Toxicity, Poisoning, Prompt Leaking
-- Decision Trees: Given the same input data, a decision tree will always follow the same path and produce the same output
 - Bayesian Networks: These models represent probabilistic relationships among variables and provide probabilities for different outcomes
 - Dataset
   - training set | 80% of the data | train the model
@@ -114,12 +118,16 @@
 - Chain-of-thought prompting | The model is asked to perform a task by thinking step by step.
 - Negative prompting | avoid certain outputs or behaviors when generating content
 
-## Fine-tuning
+## Model customization
 
-- Hyperparameters
-  - Epochs - One epoch is one cycle through the entire dataset
-  - Learning rate - The amount that values should be changed between epochs.
-  - Batch size - The number of records from the dataset that is to be selected for each interval to send to the GPUs for training
+- Fine-tuning (FM)
+  - Labeled data
+  - Hyperparameters
+    - Epochs - One epoch is one cycle through the entire dataset
+    - Learning rate - The amount that values should be changed between epochs.
+    - Batch size - The number of records from the dataset that is to be selected for each interval to send to the GPUs for training
+- Continued Pre-training (FM)
+  - Unlabeled data
 
 ## Algorithms
 
@@ -130,13 +138,15 @@
   - Neural network (e.g. predicting a digit from a handwritten image)
   - Forecasting, DeepAR | predict future values based on past values
   - Classification | classify data into a specific category
+  - Decision Trees: Given the same input data, a decision tree will always follow the same path and produce the same output
+  - K-Nearest Neighbors (KNN) | classify data based on the similarity of the input data to the nearest neighbors in the training data
 - Semi-supervised learning
   - Document classification
   - Fraud identification
   - Sentiment analysis
 - Unsupervised learning
   - Association rule learning
-  - Clustering, k-means | group data into clusters based on similarity (e.g. identifying different types of network traffic to predict potential security incidents)
+  - Clustering, K-Means | group data into clusters based on similarity (e.g. identifying different types of network traffic to predict potential security incidents)
   - Anomaly detection (unsupervised learning algorithm), Random Cut Forest (RCF) | identify outliers in the data
   - Dimensionality reduction | (e.g. it may blur out or crop background features in an image recognition application)
 - Incremental training | allows the chatbot to adapt over time by learning from new data without forgetting previously learned information
@@ -144,6 +154,12 @@
 - Generative adversarial network (GAN) | work by training two neural networks in a competitive manner
 - Variational autoencoders (VAE) | encoder and decoder. The encoder neural network maps the input data to a mean and variance for each dimension of the latent space. It generates a random sample from a Gaussian (normal) distribution
 - Transformer-based generative AI model (GPT) | builds upon the encoder and decoder concepts of VAEs. Transformer-based models add more layers to the encoder to improve performance on text-based tasks like comprehension, translation, and creative writing.
+- Computer Vision models
+  - Deep learning | use multiple layers of neurons to learn features from the data
+  - Convolutional Neural Networks (CNNs) | extract features from images
+  - Recurrent Neural Networks (RNNs) | process sequential data
+- Generative Adversarial Networks (GANs) | used for generating new data that resembles the training data, such as creating realistic images, but are not specifically designed for image classification
+- Retrieval-Augmented Generation (RAG) | optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response.
 
 ## Embedding/Transformer models
 
