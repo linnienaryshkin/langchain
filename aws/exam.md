@@ -5,14 +5,15 @@
 - Amazon SageMaker AI | build, train, and deploy machine learning models
   - SageMaker Model Cards | documentation of the model
   - SageMaker JumpStart | pre-trained, open source models
-  - SageMaker Ground Truth | creation of high-quality labeled datasets by incorporating human feedback in the labeling process, which can be used to improve reinforcement learning models
+  - SageMaker Ground Truth | creation of high-quality labeled datasets by incorporating human feedback in the labeling process, which can be used to improve reinforcement learning models. Comprehensive set of human-in-the-loop capabilities
   - SageMaker Canvas | build machine learning models without writing code
   - SageMaker Studio | IDE for machine learning
-  - SageMaker Clarify | explain the model's decisions and detect bias, identify and mitigate bias in machine learning models and datasets
+  - SageMaker Clarify | explain the model's decisions and detect bias (metrics such as accuracy, robustness, and toxicity), identify and mitigate bias in machine learning models and datasets
+  - SageMaker Experiments | track, organize, view, analyze, and compare iterative ML experimentation to gain comparative insights and register and deploy your best-performing models
   - SageMaker Pipelines | orchestration and automation of ML workflows
   - SageMaker Model Registry | catalog, version, and manage ML models
   - SageMaker Feature Store | centralized repository for storing and sharing ML features
-  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data
+  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data. Fix bias by balancing the dataset
   - SageMaker MLflow | track, organize, view, analyze, and compare iterative ML experimentation to gain comparative insights and register and deploy your best-performing models
   - SageMaker Model Dashboard | monitor and manage your models in real-time
   - SageMaker Inference endpoint | allows clients to invoke deployed models
@@ -27,17 +28,20 @@
   - Amazon Q Developer | conversational assistant for developers that provides code assistance, security scanning, AWS integration, and agentic capabilities for automating multi-step tasks
   - Amazon Q Business | generative AI assistant for business users that connects to enterprise data sources, generates content, automates tasks, and enables building AI-driven applications
 - Amazon Lex | build chatbots and voice assistants
-- Amazon Rekognition | image/video analysis
+- Amazon Rekognition | image/video analysis (not support PDF file formats)
 - Amazon Polly | text-to-speech (TTS)
 - Amazon Transcribe | speech-to-text (STT)
 - Amazon Textract | image -> text/data
 - Amazon Kendra | search/query documents
 - Amazon Comprehend | natural language processing (NLP)
+- Amazon Comprehend Medical | extract medical information from unstructured text
 - Amazon Inspector | security and compliance of AWS resources
 - AWS AI Service Cards | documentation of the AI services
 - Amazon Personalize | build recommendation systems
 - Amazon Mechanical Turk (MTurk) | marketplace for outsourcing various tasks to a distributed workforce
 - Amazon Augmented AI (Amazon A2I) | human review workflows for machine learning predictions
+- Amazon Connect | AI-powered cloud contact center
+- AWS DeepRacer | Wi-Fi-enabled, physical vehicle that can drive itself on a physical track by using a reinforcement learning model
 
 - Amazon Macie | protect sensitive data in S3
 - AWS Config | continuously assess, audit, and evaluate the configurations of your AWS resources
@@ -106,6 +110,9 @@
   - training set | 80% of the data | train the model
   - validation set | 10% of the data | tuning hyperparameters
   - test set | 10% of the data | evaluating the final performance on unseen data
+- GPT (Generative Pre-trained Transformer) Model | interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures
+- Discriminative models learn to distinguish between different classes of data (e.g. image classification, spam detection, etc.)
+- Generative models learn to generate new data that resembles the training data (e.g. image generation, text generation, etc.)
 
 ## Prompt Parameters
 
@@ -143,6 +150,7 @@
   - Classification | classify data into a specific category
   - Decision Trees: Given the same input data, a decision tree will always follow the same path and produce the same output
   - K-Nearest Neighbors (KNN) | classify data based on the similarity of the input data to the nearest neighbors in the training data
+  - Support Vector Machines (SVMs) | classify data by finding the optimal "hyperplane" (a line, plane, or boundary) to separate different classes, maximizing the margin between them for accurate predictions, even with complex, high-dimensional data, and are used in image recognition, NLP, and medical diagnosis
 - Semi-supervised learning
   - Document classification
   - Fraud identification
@@ -163,6 +171,7 @@
   - Recurrent Neural Networks (RNNs) | process sequential data
 - Generative Adversarial Networks (GANs) | used for generating new data that resembles the training data, such as creating realistic images, but are not specifically designed for image classification
 - Retrieval-Augmented Generation (RAG) | optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response.
+- WaveNet | generative model trained on human speech samples
 
 ## Embedding/Transformer models
 
@@ -179,3 +188,4 @@ Embedding models are algorithms trained to encapsulate information into dense re
 - Data retention policy | the period for which the data is stored and processed
 - Data security | the protection of data from unauthorized access, use, disclosure, disruption, modification, or destruction
 - Data integrity | ensures the data is accurate, consistent, and unaltered
+- Data lineage | the history of how data has been transformed and used over time
