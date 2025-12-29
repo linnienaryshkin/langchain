@@ -5,7 +5,9 @@
 - Amazon SageMaker AI | build, train, and deploy machine learning models
   - SageMaker Model Cards | documentation of the model
   - SageMaker JumpStart | pre-trained, open source models
+  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data. Fix bias by balancing the dataset
   - SageMaker Ground Truth | creation of high-quality labeled datasets by incorporating human feedback in the labeling process, which can be used to improve reinforcement learning models. Comprehensive set of human-in-the-loop capabilities
+    - SageMaker GroundTruth Plus | data labeling service
   - SageMaker Canvas | build machine learning models without writing code
   - SageMaker Studio | IDE for machine learning
   - SageMaker Clarify | explain the model's decisions and detect bias (metrics such as accuracy, robustness, and toxicity), identify and mitigate bias in machine learning models and datasets
@@ -13,7 +15,6 @@
   - SageMaker Pipelines | orchestration and automation of ML workflows
   - SageMaker Model Registry | catalog, version, and manage ML models
   - SageMaker Feature Store | centralized repository for storing and sharing ML features
-  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data. Fix bias by balancing the dataset
   - SageMaker MLflow | track, organize, view, analyze, and compare iterative ML experimentation to gain comparative insights and register and deploy your best-performing models
   - SageMaker Model Dashboard | monitor and manage your models in real-time
   - SageMaker Inference endpoint | allows clients to invoke deployed models
@@ -31,6 +32,7 @@
 - Amazon Rekognition | image/video analysis (not support PDF file formats)
 - Amazon Polly | text-to-speech (TTS)
 - Amazon Transcribe | speech-to-text (STT)
+- Amazon Transcribe Medical | speech-to-text (STT) for medical purposes
 - Amazon Textract | image -> text/data
 - Amazon Kendra | search/query documents
 - Amazon Comprehend | natural language processing (NLP)
@@ -42,6 +44,8 @@
 - Amazon Augmented AI (Amazon A2I) | human review workflows for machine learning predictions
 - Amazon Connect | AI-powered cloud contact center
 - AWS DeepRacer | Wi-Fi-enabled, physical vehicle that can drive itself on a physical track by using a reinforcement learning model
+- AWS Inferentia | high performance at the lowest cost in Amazon EC2 for your deep learning (DL) and generative AI inference applications
+- AWS Trainium | machine learning (ML) chip for training ML models, designed with energy efficiency in mind
 
 - Amazon Macie | protect sensitive data in S3
 - AWS Config | continuously assess, audit, and evaluate the configurations of your AWS resources
@@ -113,6 +117,10 @@
 - GPT (Generative Pre-trained Transformer) Model | interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures
 - Discriminative models learn to distinguish between different classes of data (e.g. image classification, spam detection, etc.)
 - Generative models learn to generate new data that resembles the training data (e.g. image generation, text generation, etc.)
+- Stable Diffusion | generative artificial intelligence (generative AI) model that produces unique photorealistic images from text and image prompts
+- Llama 3.1 | generative artificial intelligence (generative AI) model that produces unique text from text prompts
+- Jurassic | generative artificial intelligence (generative AI) model, question answering, summarization, draft generation, advanced information extraction, and ideation for tasks requiring intricate reasoning and logic
+- Claude | generative artificial intelligence (generative AI) model, advanced reasoning, vision analysis, code generation, and multilingual processing
 
 ## Prompt Parameters
 
@@ -167,11 +175,13 @@
 - Transformer-based generative AI model (GPT) | builds upon the encoder and decoder concepts of VAEs. Transformer-based models add more layers to the encoder to improve performance on text-based tasks like comprehension, translation, and creative writing.
 - Computer Vision models
   - Deep learning | use multiple layers of neurons to learn features from the data
-  - Convolutional Neural Networks (CNNs) | extract features from images
+  - Convolutional Neural Networks (CNNs), YOLO (You Only Look Once), Faster R-CNN | extract features from images, object detection
   - Recurrent Neural Networks (RNNs) | process sequential data
 - Generative Adversarial Networks (GANs) | used for generating new data that resembles the training data, such as creating realistic images, but are not specifically designed for image classification
 - Retrieval-Augmented Generation (RAG) | optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response.
 - WaveNet | generative model trained on human speech samples
+- Multi-class classification assigns each instance to one of several possible classes, while multi-label classification assigns each instance to one or more classes
+- Named Entity Recognition (NER) | identify and classify named entities in text into predefined categories, such as people, organizations, locations, and dates
 
 ## Embedding/Transformer models
 
@@ -189,3 +199,4 @@ Embedding models are algorithms trained to encapsulate information into dense re
 - Data security | the protection of data from unauthorized access, use, disclosure, disruption, modification, or destruction
 - Data integrity | ensures the data is accurate, consistent, and unaltered
 - Data lineage | the history of how data has been transformed and used over time
+- Benchmark dataset | a dataset used to evaluate the performance of a model, typically used to compare the performance of different models
