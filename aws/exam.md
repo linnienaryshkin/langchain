@@ -8,7 +8,7 @@
   - SageMaker Ground Truth | creation of high-quality labeled datasets by incorporating human feedback in the labeling process, which can be used to improve reinforcement learning models
   - SageMaker Canvas | build machine learning models without writing code
   - SageMaker Studio | IDE for machine learning
-  - SageMaker Clarify | explain the model's decisions and detect bias
+  - SageMaker Clarify | explain the model's decisions and detect bias, identify and mitigate bias in machine learning models and datasets
   - SageMaker Pipelines | orchestration and automation of ML workflows
   - SageMaker Model Registry | catalog, version, and manage ML models
   - SageMaker Feature Store | centralized repository for storing and sharing ML features
@@ -99,6 +99,8 @@
 - Shapley values | a local interpretability method that explains individual predictions by assigning each feature a contribution score based on its marginal effect on the prediction. This method is useful for understanding the impact of each feature on a specific instance's prediction.
 - Partial Dependence Plots (PDP) | a global interpretability method that provides a view of the model’s behavior by illustrating how the predicted outcome changes as a single feature is varied across its range, holding all other features constant. PDPs help understand the overall relationship between a feature and the model output across the entire dataset.
 - Risks: Hallucination, Toxicity, Poisoning, Prompt Leaking
+  - Hijacking | manipulating an AI system to serve malicious purposes or to misbehave in unintended ways (e.g. phishing, malware, etc.)
+  - Jailbreaking | bypassing the built-in restrictions and safety measures of AI systems to unlock restricted functionalities or generate prohibited content (e.g. generating prohibited content, accessing restricted APIs, etc.)
 - Bayesian Networks: These models represent probabilistic relationships among variables and provide probabilities for different outcomes
 - Dataset
   - training set | 80% of the data | train the model
@@ -129,9 +131,10 @@
 - Continued Pre-training (FM)
   - Unlabeled data
 
-## Algorithms
+## Machine Learning Algorithms
 
 - Reinforcement learning | agent interacting with an environment by taking actions and receiving rewards or penalties, learning a policy to maximize cumulative rewards over time
+  - Reinforcement learning from human feedback (RLHF) | machine learning (ML) technique that uses human feedback to optimize ML models to self-learn more efficiently
 - Transfer learning | applying knowledge gained from one domain to enhance performance in another related domain
 - Supervised learning | using the latest datasets containing both positive and negative customer interactions to improve the chatbot's response quality
   - Linear regression
