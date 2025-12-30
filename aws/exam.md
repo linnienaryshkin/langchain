@@ -1,200 +1,115 @@
 # AWS Exam
 
-## AWS Services
-
-- Amazon SageMaker AI | build, train, and deploy machine learning models
-  - SageMaker Model Cards | documentation of the model
+## AWS GenAI and ML Platforms
+- Amazon SageMaker | build, train, and deploy ML models
+  - SageMaker Model Cards | model documentation
   - SageMaker JumpStart | pre-trained, open source models
-  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data; surfaces imbalance/drift
-  - SageMaker Ground Truth | creation of high-quality labeled datasets with human-in-the-loop workflows across images, text, video, and 3D point clouds; produces labels for downstream model training
+  - SageMaker Data Wrangler | import, clean, transform, and analyze data; surfaces imbalance/drift
+  - SageMaker Ground Truth | human-in-the-loop labeling for images, text, video, 3D point clouds; produces labels for downstream training
     - SageMaker GroundTruth Plus | data labeling service
-  - SageMaker Canvas | build machine learning models without writing code
+  - SageMaker Canvas | build ML models without writing code
   - SageMaker Studio | IDE for machine learning
-  - SageMaker Clarify | explain the model's decisions and detect bias (metrics such as accuracy, robustness, and toxicity), identify and mitigate bias in machine learning models and datasets
-  - SageMaker Experiments | track, organize, view, analyze, and compare iterative ML experimentation
+  - SageMaker Clarify | explainability and bias detection/mitigation
+  - SageMaker Experiments | track and compare experiments
   - SageMaker Pipelines | orchestration and automation of ML workflows
   - SageMaker Model Registry | catalog, version, and manage ML models
-  - SageMaker Feature Store | centralized repository for storing and sharing ML features
+  - SageMaker Feature Store | centralized repository for sharing ML features
   - SageMaker Model Dashboard | monitor endpoints for data/model quality, bias, and drift using Model Monitor jobs
-    - SageMaker Model Monitor | monitor the performance of your models in real-time
-  - SageMaker Inference endpoint | allows clients to invoke deployed models
-- Amazon Bedrock | pre-trained models, orchestration, MCP
-  - Amazon Bedrock Guardrails | detect PII/unsafe content, enforce allowed/denied topics, word filters, and response boundaries
-  - Amazon Bedrock Agents | orchestrate tool-calling/knowledge bases for tasks (customer service, data analysis, etc.); can use Knowledge Bases for RAG
-  - Amazon Bedrock Model Evaluation | evaluate FMs/custom models (automatic/offline and human review options);
+    - SageMaker Model Monitor | monitor model performance in real-time
+  - SageMaker Inference endpoint | invoke deployed models
+- Amazon Bedrock | foundation models and orchestration
+  - Amazon Bedrock Guardrails | detect PII/unsafe content; enforce allowed/denied topics, word filters, response boundaries
+  - Amazon Bedrock Agents | tool-calling and knowledge bases for tasks; can use Knowledge Bases for RAG
+  - Amazon Bedrock Model Evaluation | evaluate FMs/custom models (automatic/offline and human review options)
 - Amazon Q
   - Amazon Q in Connect | agent assist for contact centers
-  - Amazon Q in QuickSight | Natural Language Query (NLQ) and AutoGraph, Business Analytics Service (BI)
-  - Amazon Q Developer | conversational code assistant with security scanning, AWS integration, and agentic task automation
-  - Amazon Q Business | enterprise RAG assistant with connectors, access controls, and guardrails
-- Amazon Lex | build chatbots and voice assistants
-- Amazon Rekognition | image/video analysis (does not ingest PDFs directly)
-- Amazon Textract | extract text/structured data from images and PDFs (forms/tables)
-- Amazon Polly | text-to-speech (TTS)
-- Amazon Transcribe | speech-to-text (STT)
-- Amazon Transcribe Medical | speech-to-text (STT) for medical purposes
-- Amazon Kendra | search/query documents
-- Amazon Comprehend | natural language processing (NLP)
-- Amazon Comprehend Medical | extract medical information from unstructured text
-- Amazon Inspector | automated vulnerability scanning for EC2, Lambda, and ECR images (CVEs/runtime)
-- AWS AI Service Cards | documentation of the AI services
-- Amazon Personalize | build recommendation systems
-- Amazon Mechanical Turk (MTurk) | marketplace for outsourcing various tasks to a distributed workforce
-- Amazon Augmented AI (Amazon A2I) | human review workflows for machine learning predictions
-- Amazon Connect | AI-powered cloud contact center
-- AWS DeepRacer | Wi-Fi-enabled, physical vehicle that can drive itself on a physical track by using a reinforcement learning model
-- AWS Inferentia | high performance at the lowest cost in Amazon EC2 for your deep learning (DL) and generative AI inference applications
-- AWS Trainium | machine learning (ML) chip for training ML models, designed with energy efficiency in mind
+  - Amazon Q in QuickSight | Natural Language Query (NLQ) and AutoGraph for BI dashboards
+  - Amazon Q Developer | conversational code assistant with security scanning, AWS integration, agentic task automation
+  - Amazon Q Business | enterprise RAG assistant with connectors, access controls, guardrails
+- AWS Inferentia | inference accelerator for DL/GenAI
+- AWS Trainium | training accelerator for ML/GenAI
+- AWS DeepRacer | physical car for RL learning
 
-- Amazon Macie | protect sensitive data in S3
-- AWS Config | continuously assess, audit, and evaluate the configurations of your AWS resources
-- AWS Artifact | security and compliance documentation for the AWS Cloud
-- AWS Trusted Advisor | recommendations for cost optimization, security, performance, fault tolerance, and service limits (full checks need Business/Enterprise support)
-- AWS Audit Manager | automate the collection of evidence to continuously audit your AWS usage
+## AI Application Services (by modality)
+- Conversational and contact center: Amazon Lex; Amazon Connect
+- Speech: Amazon Transcribe; Amazon Transcribe Medical; Amazon Polly
+- Vision and documents: Amazon Rekognition (images/video; no PDFs); Amazon Textract (text/structured data from images/PDFs, forms/tables)
+- Search and retrieval: Amazon Kendra
+- Language/NLP: Amazon Comprehend; Amazon Comprehend Medical
+- Recommendations: Amazon Personalize
+- Human review: Amazon Mechanical Turk (MTurk); Amazon Augmented AI (A2I)
+- Documentation: AWS AI Service Cards
+
+## Security, Compliance, and Governance
+- Amazon Macie | sensitive data protection in S3
+- Amazon Inspector | automated vulnerability scanning for EC2, Lambda, ECR images (CVEs/runtime)
+- AWS Config | assess/audit resource configurations
+- AWS Artifact | compliance reports for AWS Cloud
+- AWS Trusted Advisor | recommendations for cost, security, performance, fault tolerance, limits (full checks need Business/Enterprise support)
+- AWS Audit Manager | automate evidence collection for audits
 
 ## Metrics
-
-- Classification accuracy | the ratio of correct predictions to all predictions (TP + TN) / (TP + TN + FP + FN)
-- classification systems
-  - Precision | the ratio of true positives to all predicted positives (TP) / (TP + FP)
-  - Recall | the ratio of true positives to all actual positives (TP) / (TP + FN)
-  - F1 score | harmonic mean of precision and recall: 2 * (precision * recall) / (precision + recall)
-- regression models
-  - MSE (Mean Squared Error) | the average of the squares of the errors (y - y_pred)^2
-  - RMSE (Root Mean Squared Error) | the square root of the average of the squares of the errors
-  - MAE (Mean Absolute Error) | the average of the absolute values of the errors
-  - R-squared
-- Confusion matrix | evaluate the performance of classification models by displaying the number of true positives, true negatives, false positives, and false negatives
-- Correlation matrix | measures the statistical correlation between different variables or features in a dataset, typically used to understand the relationships between continuous variables
-- ROUGE-N (Recall-Oriented Understudy for Gisting Evaluation) | text generation/summarization quality via n-gram overlap with reference
-- BERTScore | text generation quality using contextual similarity
-- Perplexity | language-model quality metric; lower is better
-- BLEU (Bilingual Evaluation Understudy) | machine translation quality vs reference(s)
+- Classification: Accuracy; Precision; Recall; F1; Confusion matrix
+- Regression: MSE; RMSE; MAE; R-squared; Correlation matrix
+- Generative/NLG: ROUGE-N; BERTScore; Perplexity; BLEU
 
 ## Data Preparation and Training
+- Feature engineering: normalization, handling missing values, encoding categorical variables, tokenization/vectorization, feature extraction (e.g., PCA), feature selection
+- Data collection: label, ingest, aggregate
+- Instruction-based fine-tuning: prompt-response labeled pairs
+- Dataset splits: training/validation/test (e.g., 80/10/10; adjust to data size/domain; cross-validation when limited data)
 
-- Feature Engineering | selecting, modifying, or creating features from raw data to improve the performance of machine learning models
-  - For structured data typically includes tasks like normalization, handling missing values, and encoding categorical variables
-  - For unstructured data, such as text or images, feature engineering involves different tasks like tokenization (breaking down text into tokens), vectorization (converting text or images into numerical vectors), and extracting features that can represent the content meaningfully
-  - Feature extraction (e.g. Principal Component Analysis (PCA)) | transforming the data into a new feature space
-  - Feature selection | reduce the number of features
-- Data collection | label, ingest, and aggregate data
-- Instruction-based fine-tuning | labeled examples that are formatted as prompt-response pairs and that are phrased as instructions
+## Prompting, Parameters, and Customization
+- Prompt parameters: Temperature; Top K; Top P (nucleus sampling)
+- Prompt engineering techniques: Zero-shot; Few-shot; Chain-of-thought; Negative prompting
+- Model customization: Fine-tuning (labeled data; epochs, learning rate, batch size); Continued pre-training (unlabeled data)
 
-## AI concepts
+## AI and ML Concepts
+- Overfitting (high variance); Underfitting (high bias); mitigation includes early stopping, cross-validation, regularization, pruning
+- Explainability and interpretability
+- Bias types: sampling, measurement, observer, confirmation; Fairness
+- Model inference | generating outputs from inputs
+- Risks: Hallucination, Toxicity, Poisoning, Prompt leaking
+  - Hijacking | malicious manipulation
+  - Jailbreaking | bypassing safety controls
+- Bayesian Networks | probabilistic relationships with outcome probabilities
+- GPT (Generative Pre-trained Transformer) | natural language understanding/generation
+- Discriminative vs Generative models
+- Stable Diffusion; Llama 3.1; Jurassic; Claude
 
-- Overfitting | when a model performs well on training data but fails to generalize to new data.
-  - To prevent overfitting, techniques such as early stopping, cross-validation, regularization, and pruning can be used.
-  - high variance can cause overfitting
-- Underfitting | when a model is too simple to capture the underlying patterns in the data.
-  - high bias can cause underfitting
-- Explainability | the ability to understand how a model arrives at a prediction.
-- Interpretability | understanding the internal mechanisms of a machine learning model
-- Bias | unfair prejudice or preference that favors or disfavors a person or group.
-  - Sampling bias | the selection of a sample that is not representative of the population
-  - Measurement bias | the measurement of a variable that is not accurate or reliable
-  - Observer bias | the observer's bias in the data collection process
-  - Confirmation bias | the tendency to seek out information that confirms one's existing beliefs and ignore information that contradicts them
-- Fairness | impartial and just treatment without discrimination.
-- Model inference | the process of a model generating an output (response) from a given input (prompt).
+## ML Models, Algorithms, and Tools
+- Regression models | predict continuous values
+- Variance: Low variance (stable predictions; underfitting if bias/complexity too low); High variance (overfitting)
+- Shapley values | local interpretability
+- Partial Dependence Plots (PDP) | global interpretability
+- Retrieval-Augmented Generation (RAG) | ground LLM outputs with external knowledge
+- WaveNet | generative speech model
+- Multi-class vs multi-label classification
+- Named Entity Recognition (NER)
+- Deep learning | multiple layers of neurons to learn features
+- Reinforcement learning | actions/rewards; RLHF uses human feedback
+- Transfer learning | reuse knowledge across domains
+- Supervised learning | examples include linear regression, neural networks, forecasting/DeepAR, classification, decision trees, KNN, SVM
+- Semi-supervised learning | document classification, fraud ID, sentiment analysis
+- Unsupervised learning | association rule learning; clustering/K-Means; anomaly detection (Random Cut Forest); dimensionality reduction
+- Incremental training | adapt over time without forgetting
+- Diffusion model (e.g., DALL-E) | iterative denoising generation
+- Generative adversarial network (GAN) | two networks compete to generate realistic data
+- Variational autoencoders (VAE) | encoder/decoder with latent Gaussian sampling
+- Transformer-based generative AI (GPT-style) | stacked encoder/decoder concepts for text tasks
+- Computer vision models: CNNs (AlexNet, YOLO, Faster R-CNN); RNNs for sequences
 
-## ML Models and Concepts
+## Embedding and Transformer Models
+Embedding models create dense representations for high-dimensional data.
+- BERT | bidirectional contextual word representations
+- PCA | dimensionality reduction
+- Word2Vec | word vectors from co-occurrence
+- SVD | matrix decomposition for compression/noise reduction
 
-- Regression models | predict a continuous value (height of the person by their weight)
-- Low variance | predictions are stable; underfitting occurs when bias/complexity is too low relative to data
-- High variance | the model is too complex and fits the training data too closely, leading to overfitting
-- Shapley values | a local interpretability method that explains individual predictions by assigning each feature a contribution score based on its marginal effect on the prediction. This method is useful for understanding the impact of each feature on a specific instance's prediction.
-- Partial Dependence Plots (PDP) | a global interpretability method that provides a view of the model’s behavior by illustrating how the predicted outcome changes as a single feature is varied across its range, holding all other features constant. PDPs help understand the overall relationship between a feature and the model output across the entire dataset.
-- Risks: Hallucination, Toxicity, Poisoning, Prompt Leaking
-  - Hijacking | manipulating an AI system to serve malicious purposes or to misbehave in unintended ways (e.g. phishing, malware, etc.)
-  - Jailbreaking | bypassing the built-in restrictions and safety measures of AI systems to unlock restricted functionalities or generate prohibited content (e.g. generating prohibited content, accessing restricted APIs, etc.)
-- Bayesian Networks: These models represent probabilistic relationships among variables and provide probabilities for different outcomes
-- Dataset
-  - training/validation/test splits | e.g., 80/10/10 rule of thumb; adjust by data size/domain; cross-validation when data is limited
-- GPT (Generative Pre-trained Transformer) Model | interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures
-- Discriminative models learn to distinguish between different classes of data (e.g. image classification, spam detection, etc.)
-- Generative models learn to generate new data that resembles the training data (e.g. image generation, text generation, etc.)
-- Stable Diffusion | generative artificial intelligence (generative AI) model that produces unique photorealistic images from text and image prompts
-- Llama 3.1 | generative artificial intelligence (generative AI) model that produces unique text from text prompts
-- Jurassic | generative artificial intelligence (generative AI) model, question answering, summarization, draft generation, advanced information extraction, and ideation for tasks requiring intricate reasoning and logic
-- Claude | generative artificial intelligence (generative AI) model, advanced reasoning, vision analysis, code generation, and multilingual processing
-
-## Prompt Parameters
-
-- Temperature (0.0 to 1.0) | Higher temperature -> more random and creative outputs, lower temperature -> more deterministic and focused outputs
-- Top K (0 to 500, integer) | Number of most likely candidates that the model considers for the next token. With a low top K setting, like 10, the model will only consider the 10 most probable words for the next word in the sequence. This helps the output be more focused and coherent.
-- Top P (0.0 to 1.0, nucleus sampling) | Cumulative probability threshold that limits the token choices. With a low top P setting, like 0.25, the model will only consider words that make up the top 25 percent of the total probability distribution. This helps control the diversity of the model's responses.
-
-## Prompt Engineering Techniques
-
-- Zero-shot prompting | The model is asked to perform a task without any examples or guidance.
-- Few-shot prompting | The model is asked to perform a task with a few examples or guidance.
-- Chain-of-thought prompting | The model is asked to perform a task by thinking step by step.
-- Negative prompting | avoid certain outputs or behaviors when generating content
-
-## Model customization
-
-- Fine-tuning (FM)
-  - Labeled data
-  - Hyperparameters
-    - Epochs - One epoch is one cycle through the entire dataset
-    - Learning rate - The amount that values should be changed between epochs.
-    - Batch size - The number of records from the dataset that is to be selected for each interval to send to the GPUs for training
-- Continued Pre-training (FM)
-  - Unlabeled data
-
-## Machine Learning Algorithms
-
-- Deep learning | use multiple layers of neurons to learn features from the data
-- Reinforcement learning | agent interacting with an environment by taking actions and receiving rewards or penalties, learning a policy to maximize cumulative rewards over time
-  - Reinforcement learning from human feedback (RLHF) | machine learning (ML) technique that uses human feedback to optimize ML models to self-learn more efficiently
-- Transfer learning | applying knowledge gained from one domain to enhance performance in another related domain
-- Supervised learning | using the latest datasets containing both positive and negative customer interactions to improve the chatbot's response quality
-  - Linear regression
-  - Neural network (e.g. predicting a digit from a handwritten image)
-  - Forecasting, DeepAR | predict future values based on past values
-  - Classification | classify data into a specific category
-  - Decision Trees: Given the same input data, a decision tree will always follow the same path and produce the same output
-  - K-Nearest Neighbors (KNN) | classify data based on the similarity of the input data to the nearest neighbors in the training data
-  - Support Vector Machines (SVMs) | classify data by finding the optimal "hyperplane" (a line, plane, or boundary) to separate different classes, maximizing the margin between them for accurate predictions, even with complex, high-dimensional data, and are used in image recognition, NLP, and medical diagnosis
-- Semi-supervised learning
-  - Document classification
-  - Fraud identification
-  - Sentiment analysis
-- Unsupervised learning
-  - Association rule learning
-  - Clustering, K-Means | group data into clusters based on similarity (e.g. identifying different types of network traffic to predict potential security incidents)
-  - Anomaly detection (unsupervised learning algorithm), Random Cut Forest (RCF) | identify outliers in the data
-  - Dimensionality reduction | (e.g. it may blur out or crop background features in an image recognition application)
-- Incremental training | allows the chatbot to adapt over time by learning from new data without forgetting previously learned information
-- Diffusion Model (DALL-E) | create new data by iteratively making controlled random changes to an initial data sample
-- Generative adversarial network (GAN) | work by training two neural networks in a competitive manner
-- Variational autoencoders (VAE) | encoder and decoder. The encoder neural network maps the input data to a mean and variance for each dimension of the latent space. It generates a random sample from a Gaussian (normal) distribution
-- Transformer-based generative AI model (GPT) | builds upon the encoder and decoder concepts of VAEs. Transformer-based models add more layers to the encoder to improve performance on text-based tasks like comprehension, translation, and creative writing.
-- Computer Vision models
-  - Deep learning | use multiple layers of neurons to learn features from the data
-  - Convolutional Neural Networks (CNNs), AlexNet, YOLO (You Only Look Once), Faster R-CNN | extract features from images, object detection
-  - Recurrent Neural Networks (RNNs) | process sequential data
-- Generative Adversarial Networks (GANs) | used for generating new data that resembles the training data, such as creating realistic images, but are not specifically designed for image classification
-- Retrieval-Augmented Generation (RAG) | optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response.
-- WaveNet | generative model trained on human speech samples
-- Multi-class classification assigns each instance to one of several possible classes, while multi-label classification assigns each instance to one or more classes
-- Named Entity Recognition (NER) | identify and classify named entities in text into predefined categories, such as people, organizations, locations, and dates
-
-## Embedding/Transformer models
-
-Embedding models are algorithms trained to encapsulate information into dense representations in a multi-dimensional space. Data scientists use embedding models to enable ML models to comprehend and reason with high-dimensional data.
-
-- Bidirectional Encoder Representations from Transformers (BERT) | capture the contextual meaning of words by looking at both the words that come before and after them
-- Principal Component Analysis (PCA) | reducing the dimensions of large datasets to simplify them while retaining most of the variance in the data
-- Word2Vec | creates vector representations of words based on their co-occurrence in a given text
-- Singular Value Decomposition (SVD) | matrix decomposition method used in various applications like data compression and noise reduction
-
----
-
-- Data residency | the location where the data is stored and processed
-- Data retention policy | the period for which the data is stored and processed
-- Data security | the protection of data from unauthorized access, use, disclosure, disruption, modification, or destruction
-- Data integrity | ensures the data is accurate, consistent, and unaltered
-- Data lineage | the history of how data has been transformed and used over time
-- Benchmark dataset | a dataset used to evaluate the performance of a model, typically used to compare the performance of different models
+## Data Governance Concepts
+- Data residency | where data is stored/processed
+- Data retention policy | how long data is stored/processed
+- Data security | protection from unauthorized access or change
+- Data integrity | accuracy and consistency of data
+- Data lineage | history of how data is transformed and used
+- Benchmark dataset | used to evaluate and compare model performance
