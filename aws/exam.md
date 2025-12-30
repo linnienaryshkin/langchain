@@ -5,39 +5,38 @@
 - Amazon SageMaker AI | build, train, and deploy machine learning models
   - SageMaker Model Cards | documentation of the model
   - SageMaker JumpStart | pre-trained, open source models
-  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data. Fix bias by balancing the dataset
-  - SageMaker Ground Truth | creation of high-quality labeled datasets by incorporating human feedback in the labeling process, which can be used to improve reinforcement learning models. Comprehensive set of human-in-the-loop capabilities
+  - SageMaker Data Wrangler | visual interface to import, clean, transform, and analyze data; surfaces imbalance/drift
+  - SageMaker Ground Truth | creation of high-quality labeled datasets with human-in-the-loop workflows across images, text, video, and 3D point clouds; produces labels for downstream model training
     - SageMaker GroundTruth Plus | data labeling service
   - SageMaker Canvas | build machine learning models without writing code
   - SageMaker Studio | IDE for machine learning
   - SageMaker Clarify | explain the model's decisions and detect bias (metrics such as accuracy, robustness, and toxicity), identify and mitigate bias in machine learning models and datasets
-  - SageMaker Experiments | track, organize, view, analyze, and compare iterative ML experimentation to gain comparative insights and register and deploy your best-performing models
+  - SageMaker Experiments | track, organize, view, analyze, and compare iterative ML experimentation
   - SageMaker Pipelines | orchestration and automation of ML workflows
   - SageMaker Model Registry | catalog, version, and manage ML models
   - SageMaker Feature Store | centralized repository for storing and sharing ML features
-  - SageMaker MLflow | track, organize, view, analyze, and compare iterative ML experimentation to gain comparative insights and register and deploy your best-performing models
-  - SageMaker Model Dashboard | monitor and manage your models in real-time
+  - SageMaker Model Dashboard | monitor endpoints for data/model quality, bias, and drift using Model Monitor jobs
+    - SageMaker Model Monitor | monitor the performance of your models in real-time
   - SageMaker Inference endpoint | allows clients to invoke deployed models
-  - SageMaker Model Monitor | monitor the performance of your models in real-time
 - Amazon Bedrock | pre-trained models, orchestration, MCP
-  - Amazon Bedrock Guardrails | detects sensitive information such as personally identifiable information (PIIs) in input prompts or model responses
-  - Amazon Bedrock Agents | build agents that can perform tasks such as customer service, data analysis, and more
-  - Amazon Bedrock Model Evaluation | preparing data, training models, selecting appropriate metrics, testing and analyzing results
+  - Amazon Bedrock Guardrails | detect PII/unsafe content, enforce allowed/denied topics, word filters, and response boundaries
+  - Amazon Bedrock Agents | orchestrate tool-calling/knowledge bases for tasks (customer service, data analysis, etc.); can use Knowledge Bases for RAG
+  - Amazon Bedrock Model Evaluation | evaluate FMs/custom models (automatic/offline and human review options);
 - Amazon Q
-  - Amazon Q in Connect | contact center service from AWS
-  - Amazon Q in QuickSight | business intelligence (BI) service that allows users to easily create and share interactive dashboards and visualizations from various data sources
-  - Amazon Q Developer | conversational assistant for developers that provides code assistance, security scanning, AWS integration, and agentic capabilities for automating multi-step tasks
-  - Amazon Q Business | generative AI assistant for business users that connects to enterprise data sources, generates content, automates tasks, and enables building AI-driven applications
+  - Amazon Q in Connect | agent assist for contact centers
+  - Amazon Q in QuickSight | Natural Language Query (NLQ) and AutoGraph, Business Analytics Service (BI)
+  - Amazon Q Developer | conversational code assistant with security scanning, AWS integration, and agentic task automation
+  - Amazon Q Business | enterprise RAG assistant with connectors, access controls, and guardrails
 - Amazon Lex | build chatbots and voice assistants
-- Amazon Rekognition | image/video analysis (not support PDF file formats)
+- Amazon Rekognition | image/video analysis (does not ingest PDFs directly)
+- Amazon Textract | extract text/structured data from images and PDFs (forms/tables)
 - Amazon Polly | text-to-speech (TTS)
 - Amazon Transcribe | speech-to-text (STT)
 - Amazon Transcribe Medical | speech-to-text (STT) for medical purposes
-- Amazon Textract | image -> text/data
 - Amazon Kendra | search/query documents
 - Amazon Comprehend | natural language processing (NLP)
 - Amazon Comprehend Medical | extract medical information from unstructured text
-- Amazon Inspector | security and compliance of AWS resources
+- Amazon Inspector | automated vulnerability scanning for EC2, Lambda, and ECR images (CVEs/runtime)
 - AWS AI Service Cards | documentation of the AI services
 - Amazon Personalize | build recommendation systems
 - Amazon Mechanical Turk (MTurk) | marketplace for outsourcing various tasks to a distributed workforce
@@ -50,7 +49,7 @@
 - Amazon Macie | protect sensitive data in S3
 - AWS Config | continuously assess, audit, and evaluate the configurations of your AWS resources
 - AWS Artifact | security and compliance documentation for the AWS Cloud
-- AWS Trusted Advisor | recommendations for cost optimization, security, and resilience
+- AWS Trusted Advisor | recommendations for cost optimization, security, performance, fault tolerance, and service limits (full checks need Business/Enterprise support)
 - AWS Audit Manager | automate the collection of evidence to continuously audit your AWS usage
 
 ## Metrics
@@ -67,10 +66,10 @@
   - R-squared
 - Confusion matrix | evaluate the performance of classification models by displaying the number of true positives, true negatives, false positives, and false negatives
 - Correlation matrix | measures the statistical correlation between different variables or features in a dataset, typically used to understand the relationships between continuous variables
-- ROUGE-N (Recall-Oriented Understudy for Gisting Evaluation) | evaluate the quality of the generated text by comparing it to the reference text for n-grams
-- BERTScore | evaluate the quality of the generated text by comparing it to the reference text
-- Perplexity | probability of a model to generate a given sequence of words
-- BLEU (Bilingual Evaluation Understudy) | evaluate the quality of text that has been machine-translated by comparing it with one or more reference translations
+- ROUGE-N (Recall-Oriented Understudy for Gisting Evaluation) | text generation/summarization quality via n-gram overlap with reference
+- BERTScore | text generation quality using contextual similarity
+- Perplexity | language-model quality metric; lower is better
+- BLEU (Bilingual Evaluation Understudy) | machine translation quality vs reference(s)
 
 ## Data Preparation and Training
 
@@ -102,7 +101,7 @@
 ## ML Models and Concepts
 
 - Regression models | predict a continuous value (height of the person by their weight)
-- Low variance | the model is too simple and does not fit the data well, leading to underfitting
+- Low variance | predictions are stable; underfitting occurs when bias/complexity is too low relative to data
 - High variance | the model is too complex and fits the training data too closely, leading to overfitting
 - Shapley values | a local interpretability method that explains individual predictions by assigning each feature a contribution score based on its marginal effect on the prediction. This method is useful for understanding the impact of each feature on a specific instance's prediction.
 - Partial Dependence Plots (PDP) | a global interpretability method that provides a view of the model’s behavior by illustrating how the predicted outcome changes as a single feature is varied across its range, holding all other features constant. PDPs help understand the overall relationship between a feature and the model output across the entire dataset.
@@ -111,9 +110,7 @@
   - Jailbreaking | bypassing the built-in restrictions and safety measures of AI systems to unlock restricted functionalities or generate prohibited content (e.g. generating prohibited content, accessing restricted APIs, etc.)
 - Bayesian Networks: These models represent probabilistic relationships among variables and provide probabilities for different outcomes
 - Dataset
-  - training set | 80% of the data | train the model
-  - validation set | 10% of the data | tuning hyperparameters
-  - test set | 10% of the data | evaluating the final performance on unseen data
+  - training/validation/test splits | e.g., 80/10/10 rule of thumb; adjust by data size/domain; cross-validation when data is limited
 - GPT (Generative Pre-trained Transformer) Model | interpret natural language inputs and generating coherent outputs, such as SQL queries, by leveraging its understanding of language patterns and structures
 - Discriminative models learn to distinguish between different classes of data (e.g. image classification, spam detection, etc.)
 - Generative models learn to generate new data that resembles the training data (e.g. image generation, text generation, etc.)
