@@ -1,5 +1,12 @@
 # AWS Certified AI Practitioner - Study Notes
 
+## Core AI Concepts & Definitions
+
+- **Artificial Intelligence (AI)** - The ability of a machine to perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language understanding
+- **Machine Learning (ML)** - A subset of AI that uses statistical models to make predictions or decisions based on data
+- **Deep Learning (DL)** - A subset of machine learning that uses artificial neural networks to learn from data
+- **Generative AI** - A type of AI that uses machine learning to generate new data, such as images, text, or audio
+
 ## AWS AI/ML Services
 
 ### Amazon SageMaker AI
@@ -50,6 +57,7 @@ AI-powered assistant suite for different use cases.
 - **Amazon Lex** - Build conversational chatbots and voice assistants
 - **Amazon Comprehend** - Natural language processing (NLP) for sentiment analysis, entity recognition, and topic modeling
 - **Amazon Comprehend Medical** - Extract medical information from unstructured clinical text
+- **Amazon Translate** - Neural machine translation using deep learning models for accurate and natural-sounding translation
 - **Amazon Kendra** - Intelligent search service to query documents using natural language
 - **Amazon Textract** - Extract text and structured data (forms, tables) from images and PDFs
 - **Amazon Transcribe** - Speech-to-text (STT) conversion
@@ -89,7 +97,28 @@ AI-powered assistant suite for different use cases.
 - **AWS Trusted Advisor** - Real-time recommendations for cost optimization, security, performance, fault tolerance, and service limits (full checks require Business/Enterprise support)
 - **AWS Audit Manager** - Automate evidence collection for continuous compliance auditing
 
----
+### Security Standards & Compliance
+
+- **NIST (National Institute of Standards and Technology)** - Cybersecurity framework
+- **ENISA (European Union Agency for Cybersecurity)** - EU cybersecurity standards
+- **ISO (International Organization for Standardization)** - International standards
+- **AWS SOC (System and Organization Controls)** - AWS compliance certifications
+- **HIPAA (Health Insurance Portability and Accountability Act)** - Healthcare data protection
+- **GDPR (General Data Protection Regulation)** - EU data protection regulation
+- **PCI DSS (Payment Card Industry Data Security Standard)** - Payment card data security
+
+### OWASP Top 10 for LLMs (2025)
+
+1. **LLM01: Prompt Injection** - User prompts alter system behavior
+2. **LLM02: Sensitive Information Disclosure** - Exposure of sensitive data
+3. **LLM03: Supply Chain** - Vulnerabilities in LLM supply chains
+4. **LLM04: Data and Model Poisoning** - Corrupted training or embedding data
+5. **LLM05: Improper Output Handling** - Insufficient validation and sanitization
+6. **LLM06: Excessive Agency** - Overly autonomous LLM systems
+7. **LLM07: System Prompt Leakage** - Exposure of system prompts
+8. **LLM08: Vector and Embedding Weaknesses** - Vulnerabilities in vector databases
+9. **LLM09: Misinformation** - False or misleading information generation
+10. **LLM10: Unbounded Consumption** - Excessive resource consumption
 
 ## Evaluation Metrics
 
@@ -99,7 +128,14 @@ AI-powered assistant suite for different use cases.
 - **Precision** - Ratio of true positives to all predicted positives: `TP / (TP + FP)` - Answers: "Of all positive predictions, how many were correct?"
 - **Recall (Sensitivity)** - Ratio of true positives to all actual positives: `TP / (TP + FN)` - Answers: "Of all actual positives, how many did we catch?"
 - **F1 Score** - Harmonic mean of precision and recall: `2 × (Precision × Recall) / (Precision + Recall)` - Useful when you need balance between precision and recall
+- **AUC-ROC (Area Under the Receiver Operating Characteristic Curve)** - Measures the ability of a classifier to distinguish between classes; higher values indicate better performance
 - **Confusion Matrix** - Visual representation showing true positives, true negatives, false positives, and false negatives
+
+#### Classification Types
+
+- **Binary Classification** - Model classifies data into two categories (Yes/No, True/False, Fraud/Not Fraud)
+- **Multi-Class Classification** - Model classifies data into multiple mutually exclusive categories
+- **Multi-Label Classification** - Each instance can be assigned to multiple classes simultaneously
 
 ### Regression Metrics
 
@@ -115,11 +151,27 @@ AI-powered assistant suite for different use cases.
 - **BERTScore** - Evaluates text generation quality using contextual embeddings and semantic similarity
 - **Perplexity** - Measures language model quality; lower values indicate better performance
 
+### Benchmark Datasets
+
+Standardized datasets used to evaluate and compare model performance:
+- **GLUE (General Language Understanding Evaluation)** - Collection of tasks for evaluating natural language understanding
+- **SuperGLUE** - More challenging benchmark suite for language understanding
+- **SQuAD (Stanford Question Answering Dataset)** - Reading comprehension dataset
+- **WMT (Workshop on Machine Translation)** - Machine translation evaluation datasets
+
 ### Other Metrics
 
 - **Correlation Matrix** - Shows statistical relationships between variables in a dataset; useful for understanding feature dependencies
 
----
+## Machine Learning Development Lifecycle (MLDL)
+
+0. **Business Goal Identification** - Define key performance indicators (KPIs)
+1. **ML Problem Framing** - Translate business problem into ML problem
+2. **Data Processing** - Data collection, data preprocessing, and feature engineering
+3. **Model Development** - Training, tuning, and evaluation
+4. **Model Deployment** - Inference and prediction
+5. **Model Monitoring** - Track performance and detect issues
+6. **Model Retraining** - Update model with new data
 
 ## Data Preparation & Feature Engineering
 
@@ -148,7 +200,6 @@ The process of selecting, modifying, or creating features from raw data to impro
 - **Instruction-Based Fine-Tuning** - Use labeled prompt-response pairs formatted as instructions for supervised fine-tuning
 - **Dataset Splits** - Common rule of thumb: 80% training / 10% validation / 10% test; adjust based on data size and domain; use cross-validation when data is limited
 
----
 
 ## Core AI Concepts
 
@@ -157,12 +208,12 @@ The process of selecting, modifying, or creating features from raw data to impro
 **Overfitting:**
 - Model performs well on training data but fails to generalize to new data
 - Caused by high variance (model too complex)
-- **Prevention techniques**: Early stopping, cross-validation, regularization, pruning, dropout
+- **Prevention techniques**: Early stopping, cross-validation, regularization, pruning, dropout, dimension reduction (PCA), simpler models
 
 **Underfitting:**
 - Model is too simple to capture underlying patterns in the data
 - Caused by high bias (model not complex enough)
-- **Solutions**: Increase model complexity, add more features, reduce regularization
+- **Solutions**: Increase model complexity, add more features, reduce regularization, increase training data
 
 **Variance vs. Bias:**
 - **Low Variance** - Predictions are stable across different training sets; risk of underfitting if model is too simple
@@ -174,6 +225,11 @@ The process of selecting, modifying, or creating features from raw data to impro
 - **Interpretability** - Understanding the internal mechanisms and logic of a model
 - **Shapley Values** - Local interpretability method that assigns each feature a contribution score for individual predictions
 - **Partial Dependence Plots (PDP)** - Global interpretability method showing how predictions change as a single feature varies while holding others constant
+
+**Explainability Frameworks:**
+- **SHAP (SHapley Additive exPlanations)** - Unified framework for explaining model outputs using Shapley values
+- **LIME (Local Interpretable Model-agnostic Explanations)** - Explains individual predictions by approximating the model locally
+- **Counterfactual Explanations** - Shows what changes to input would lead to different predictions
 
 ### Bias & Fairness
 
@@ -195,13 +251,14 @@ The process of selecting, modifying, or creating features from raw data to impro
 - **Prompt Leaking** - Exposing system prompts or instructions through adversarial queries
 - **Hijacking** - Manipulating AI systems for malicious purposes (phishing, malware distribution)
 - **Jailbreaking** - Bypassing built-in safety measures to generate prohibited content or access restricted features
+- **Intellectual Property** - Model generates content that infringes on intellectual property rights
+- **Plagiarism and Cheating** - Model generates content that copies others' work
+- **Disruption of Work Nature** - Model generates content that disrupts the nature of work
 
 ### Other Concepts
 
 - **Model Inference** - Process of generating outputs (predictions/responses) from given inputs (features/prompts)
 - **Transfer Learning** - Applying knowledge from one domain to improve performance in a related domain
-
----
 
 ## Machine Learning Algorithms
 
@@ -291,9 +348,13 @@ Learn to generate new data that resembles training data.
 - **Retrieval-Augmented Generation (RAG)** - Enhance LLM outputs by referencing external knowledge bases before generating responses
 - **Named Entity Recognition (NER)** - Identify and classify entities (people, organizations, locations, dates) in text
 
----
-
 ## Foundation Models & LLMs
+
+### Key Concepts
+
+- **Tokens** - Basic units of text processed by AI models
+- **Transformer Architecture** - Attention-based architecture for NLP tasks
+- **Multi-Modal Models** - Models that can process multiple types of data (text, images, audio)
 
 ### Model Types
 
@@ -312,8 +373,6 @@ Transform data into dense vector representations in multi-dimensional space.
 - **BERT Embeddings** - Context-aware embeddings capturing semantic relationships
 - **Principal Component Analysis (PCA)** - Dimensionality reduction while preserving variance
 - **Singular Value Decomposition (SVD)** - Matrix decomposition for compression and noise reduction
-
----
 
 ## Model Customization
 
@@ -336,9 +395,14 @@ Further train foundation models on domain-specific unlabeled data to adapt to sp
 - Large amounts of unlabeled domain-specific text
 - Significant compute resources
 
----
-
 ## Prompt Engineering
+
+### Prompt Components
+
+- **Instructions** - Clear task instructions for the model
+- **Context** - Background information relevant to the task
+- **Input Data** - The actual data to process
+- **Output Indicator** - Format or structure for desired output
 
 ### Prompting Techniques
 
@@ -363,7 +427,9 @@ Further train foundation models on domain-specific unlabeled data to adapt to sp
   - Lower values (e.g., 0.25): Only top 25% of probability mass considered
   - Higher values (e.g., 0.9): More diverse token choices
 
----
+- **Length/Maximum Length and Stop Sequences**
+  - Maximum length: Model stops generating after reaching maximum token limit
+  - Stop sequences: Model stops generating when it encounters specified stop sequences
 
 ## Computer Vision
 
@@ -379,14 +445,10 @@ Further train foundation models on domain-specific unlabeled data to adapt to sp
 - **Multi-Class Classification** - Each instance assigned to exactly one class from multiple options
 - **Multi-Label Classification** - Each instance can be assigned to multiple classes simultaneously
 
----
-
 ## Probability & Statistical Models
 
 - **Bayesian Networks** - Graphical models representing probabilistic relationships among variables; provide probability distributions for different outcomes
 - **Decision Trees** - Deterministic models following rule-based paths; same input always produces same output
-
----
 
 ## Data Governance & Compliance
 
@@ -397,13 +459,12 @@ Further train foundation models on domain-specific unlabeled data to adapt to sp
 - **Data Lineage** - Complete history of data transformations and usage over time
 - **Benchmark Dataset** - Standardized dataset used to evaluate and compare model performance across different approaches
 
----
-
 ## Quick Reference
 
 ### When to Use Which Service
 
 **Text Analysis**: Comprehend, Comprehend Medical, Kendra, Textract  
+**Translation**: Translate  
 **Image/Video**: Rekognition, Textract (documents)  
 **Speech**: Transcribe, Transcribe Medical, Polly  
 **Chatbots**: Lex, Q Business  
