@@ -148,6 +148,7 @@
 
 ## Machine Learning Algorithms
 
+- Deep learning | use multiple layers of neurons to learn features from the data
 - Reinforcement learning | agent interacting with an environment by taking actions and receiving rewards or penalties, learning a policy to maximize cumulative rewards over time
   - Reinforcement learning from human feedback (RLHF) | machine learning (ML) technique that uses human feedback to optimize ML models to self-learn more efficiently
 - Transfer learning | applying knowledge gained from one domain to enhance performance in another related domain
@@ -175,7 +176,7 @@
 - Transformer-based generative AI model (GPT) | builds upon the encoder and decoder concepts of VAEs. Transformer-based models add more layers to the encoder to improve performance on text-based tasks like comprehension, translation, and creative writing.
 - Computer Vision models
   - Deep learning | use multiple layers of neurons to learn features from the data
-  - Convolutional Neural Networks (CNNs), YOLO (You Only Look Once), Faster R-CNN | extract features from images, object detection
+  - Convolutional Neural Networks (CNNs), AlexNet, YOLO (You Only Look Once), Faster R-CNN | extract features from images, object detection
   - Recurrent Neural Networks (RNNs) | process sequential data
 - Generative Adversarial Networks (GANs) | used for generating new data that resembles the training data, such as creating realistic images, but are not specifically designed for image classification
 - Retrieval-Augmented Generation (RAG) | optimizing the output of a large language model, so it references an authoritative knowledge base outside of its training data sources before generating a response.
