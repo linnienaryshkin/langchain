@@ -2,6 +2,10 @@
 
 > Preparation materials for the [GitHub Copilot (GH-300)](https://learn.microsoft.com/en-us/credentials/certifications/github-copilot) certification exam.
 
+First, I encourage you to read [Study guide for Exam GH-300: GitHub Copilot](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300?utm_source=openai) so you understand the exam objectives and structure. Then, use this guide as reference to prepare for the exam.
+
+Also, I prepared a [GitHub Copilot (GH-300) Certification space](https://github.com/copilot/spaces/linnienaryshkin/2) to help you study and practice with AI chat.
+
 ## Table of Contents
 
 1. [Core Principles](#core-principles)
