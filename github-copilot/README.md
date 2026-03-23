@@ -2,126 +2,110 @@
 
 > Preparation materials for the [GitHub Copilot (GH-300)](https://learn.microsoft.com/en-us/credentials/certifications/github-copilot) certification exam.
 
-First, I encourage you to read [Study guide for Exam GH-300: GitHub Copilot](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300?utm_source=openai) so you understand the exam objectives and structure. Then, use this guide as reference to prepare for the exam.
+Read the [Study guide for Exam GH-300: GitHub Copilot](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300) first to understand the exam objectives and structure. Then use this guide as a reference to prepare.
 
-Also, I prepared a [GitHub Copilot (GH-300) Certification space](https://github.com/copilot/spaces/linnienaryshkin/2) to help you study and practice with AI chat.
+I also prepared a [GitHub Copilot (GH-300) Certification space](https://github.com/copilot/spaces/linnienaryshkin/2) to help you study and practice with AI chat.
+
+## Exam Domains at a Glance
+
+| Domain                                                | Weight |
+| ----------------------------------------------------- | ------ |
+| Use GitHub Copilot responsibly                        | 15–20% |
+| Use GitHub Copilot features                           | 25–30% |
+| GitHub Copilot features                               | 25–30% |
+| Understand GitHub Copilot data and architecture       | 10–15% |
+| Apply prompt engineering and context crafting         | 10–15% |
+| Improve developer productivity with GitHub Copilot    | 10–15% |
+| Configure privacy, content exclusions, and safeguards | 10–15% |
 
 ## Table of Contents
 
-1. [Core Principles](#core-principles)
-2. [Subscription Plans](#subscription-plans)
-3. [How Copilot Works](#how-copilot-works)
-4. [Using Copilot Effectively](#using-copilot-effectively)
-5. [Advanced Features](#advanced-features)
-6. [Enterprise & Security](#enterprise--security)
-7. [Content Exclusion & Ignoring Files](#content-exclusion--ignoring-files)
-8. [Policy Hierarchy & Propagation](#policy-hierarchy--propagation)
-9. [Audit Logs](#audit-logs)
-10. [Individual User Settings](#individual-user-settings)
-11. [Best Practices & Limitations](#best-practices--limitations)
+1. [Responsible AI Principles](#1-responsible-ai-principles)
+2. [Subscription Plans](#2-subscription-plans)
+3. [How Copilot Works](#3-how-copilot-works)
+4. [Using Copilot in the IDE](#4-using-copilot-in-the-ide)
+5. [Prompt Engineering](#5-prompt-engineering)
+6. [Advanced Features](#6-advanced-features)
+7. [Individual User Settings](#7-individual-user-settings)
+8. [Administration: Policies & Hierarchy](#8-administration-policies--hierarchy)
+9. [Content Exclusion](#9-content-exclusion)
+10. [Audit Logs & Usage Metrics](#10-audit-logs--usage-metrics)
+11. [Security & Data Handling](#11-security--data-handling)
+12. [Best Practices & Limitations](#12-best-practices--limitations)
+13. [Quick Reference](#13-quick-reference)
 
 ---
 
-## Core Principles
+## 1. Responsible AI Principles
 
-### Microsoft Responsible AI & GitHub Copilot Principles
+### Microsoft Responsible AI
 
-- **Fairness** - Avoid bias and ensure equitable treatment for all users
-- **Reliability & Safety** - Ensure the system performs as intended and prevents harm
-- **Privacy & Security** - Protect user data and ensure secure interactions
-- **Inclusiveness** - Design for diverse users and use cases
-- **Transparency** - Provide clear information about system operations and decisions
-- **Accountability** - Ensure responsibility for system outcomes and impacts
+GitHub Copilot is built on six principles from the [Microsoft Responsible AI framework](https://www.microsoft.com/en-us/ai/responsible-ai):
 
-> 📎 [Microsoft Responsible AI Principles](https://www.microsoft.com/en-us/ai/responsible-ai)
+| Principle                | Definition                                                      |
+| ------------------------ | --------------------------------------------------------------- |
+| **Fairness**             | Avoid bias and ensure equitable treatment for all users         |
+| **Reliability & Safety** | Ensure the system performs as intended and prevents harm        |
+| **Privacy & Security**   | Protect user data and ensure secure interactions                |
+| **Inclusiveness**        | Design for diverse users and use cases                          |
+| **Transparency**         | Provide clear information about system operations and decisions |
+| **Accountability**       | Ensure responsibility for system outcomes and impacts           |
 
-### Prompt Engineering: The 4 S's
+### Responsible Use in Practice
 
-| Principle    | Definition                                       | Why It Matters                               |
-| ------------ | ------------------------------------------------ | -------------------------------------------- |
-| **Single**   | Focus on one well-defined task/question          | Clarity elicits accurate responses           |
-| **Specific** | Use explicit and detailed instructions           | Specificity yields precise suggestions       |
-| **Short**    | Keep prompts concise                             | Balance clarity without overwhelming Copilot |
-| **Surround** | Use descriptive filenames and open related files | Rich context enables tailored suggestions    |
-
-### Prompt Techniques
-
-#### Zero-Shot Prompting
-
-Provide a description with **no examples** — Copilot infers from its training:
-
-```python
-# Function to calculate the factorial of a number
-def factorial(n):
-    # Copilot generates code with just this prompt
-```
-
-#### Few-Shot Prompting
-
-Provide **2–3 input/output examples** in comments so Copilot learns the pattern:
-
-```python
-# Convert temperature from Celsius to Fahrenheit
-# celsius_to_fahrenheit(0) -> 32
-# celsius_to_fahrenheit(100) -> 212
-def celsius_to_fahrenheit(c):
-    # Copilot infers the formula from the examples above
-```
-
-**Why it matters for the exam:** Few-shot prompting dramatically improves accuracy for complex or custom logic. Providing examples guides Copilot to understand the exact pattern, format, or behavior you expect.
-
-> 📎 [Best practices for using GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot)
+- Always review and validate AI-generated code before accepting
+- Understand that Copilot is a tool — you are accountable for the code you ship
+- Be cautious with sensitive data, PII, and security-critical code
+- Use content exclusion and policy controls to protect confidential content
+- Run security scanning (SAST/DAST) on generated code
 
 ---
 
-## Subscription Plans
+## 2. Subscription Plans
 
 ### Plan Comparison
 
-| Plan           | Cost           | Code Completions | Premium Requests   | Key Features                                            | Best For                   |
-| -------------- | -------------- | ---------------- | ------------------ | ------------------------------------------------------- | -------------------------- |
-| **Free**       | $0             | 2,000/mo         | 50/mo              | Basic Chat, limited suggestions                         | Hobbyists, learners        |
-| **Pro**        | $10/month      | Unlimited        | 300/mo             | Unlimited completions, extended model selection          | Individual developers      |
-| **Pro+**       | $39/month      | Unlimited        | 1,500/mo           | All models (incl. advanced), maximum priority            | Power users, professionals |
-| **Business**   | $19/user/month | Unlimited        | 300/user/mo        | Policy management, content exclusion, audit logs, SSO   | Teams & organizations      |
-| **Enterprise** | $39/user/month | Unlimited        | 1,000/user/mo      | Custom models, codebase indexing, knowledge bases, SLA  | Large organizations        |
-
-### What's Included by Plan
-
-| Feature                        | Free | Pro | Pro+ | Business | Enterprise |
-| ------------------------------ | ---- | --- | ---- | -------- | ---------- |
-| Code completions               | 2K/mo | ∞  | ∞    | ∞        | ∞          |
-| Copilot Chat                   | Limited | ∞ | ∞   | ∞        | ∞          |
-| Premium requests               | 50   | 300 | 1,500 | 300/user | 1,000/user |
-| Model selection                | Basic | Extended | All | All   | Custom/private |
-| Content exclusion              | ❌   | ❌  | ❌   | ✅       | ✅         |
-| Audit logs                     | ❌   | ❌  | ❌   | ✅       | ✅         |
-| Policy management              | ❌   | ❌  | ❌   | ✅       | ✅         |
-| SAML SSO                       | ❌   | ❌  | ❌   | ✅       | ✅         |
-| IP indemnity                   | ❌   | ❌  | ❌   | ✅       | ✅         |
-| Codebase indexing              | ❌   | ❌  | ❌   | ❌       | ✅         |
-| Knowledge bases                | ❌   | ❌  | ❌   | ❌       | ✅         |
-| Custom models                  | ❌   | ❌  | ❌   | ❌       | ✅         |
-
-> **Note:** Premium requests are used for advanced features (Copilot Chat, agent mode, code review, advanced model selection). Additional requests cost $0.04/request.
+| Plan           | Cost           | Code Completions | Premium Requests | Best For              |
+| -------------- | -------------- | ---------------- | ---------------- | --------------------- |
+| **Free**       | $0             | 2,000/mo         | 50/mo            | Hobbyists, learners   |
+| **Student**    | $0 (verified)  | Unlimited        | Included         | Students              |
+| **Pro**        | $10/month      | Unlimited        | 300/mo           | Individual developers |
+| **Pro+**       | $39/month      | Unlimited        | 1,500/mo         | Power users           |
+| **Business**   | $19/user/month | Unlimited        | 300/user/mo      | Teams & organizations |
+| **Enterprise** | $39/user/month | Unlimited        | 1,000/user/mo    | Large organizations   |
 
 > **Free for students/educators:** Verified students, teachers, and popular OSS maintainers get Pro-level access at no cost.
 
-### Cost Optimization Strategies
+### Feature Availability by Plan
 
-- Evaluate team size and actual usage patterns
-- Consider seat sharing for part-time users
-- Leverage organization discounts
-- Monitor ROI and measure productivity gains
-- Regular license audits to eliminate waste
+| Feature              | Free    | Pro      | Pro+  | Business | Enterprise     |
+| -------------------- | ------- | -------- | ----- | -------- | -------------- |
+| Code completions     | 2K/mo   | ∞        | ∞     | ∞        | ∞              |
+| Copilot Chat         | Limited | ∞        | ∞     | ∞        | ∞              |
+| Premium requests     | 50      | 300      | 1,500 | 300/user | 1,000/user     |
+| Model selection      | Basic   | Extended | All   | All      | Custom/private |
+| Copilot coding agent | ❌       | ✅        | ✅     | ✅        | ✅              |
+| Agent mode           | ✅       | ✅        | ✅     | ✅        | ✅              |
+| MCP support          | ✅       | ✅        | ✅     | ✅        | ✅              |
+| PR summaries         | ❌       | ✅        | ✅     | ✅        | ✅              |
+| Copilot CLI          | ✅       | ✅        | ✅     | ✅        | ✅              |
+| Content exclusion    | ❌       | ❌        | ❌     | ✅        | ✅              |
+| Audit logs           | ❌       | ❌        | ❌     | ✅        | ✅              |
+| Policy management    | ❌       | ❌        | ❌     | ✅        | ✅              |
+| SAML SSO             | ❌       | ❌        | ❌     | ✅        | ✅              |
+| IP indemnity         | ❌       | ❌        | ❌     | ✅        | ✅              |
+| Knowledge bases      | ❌       | ❌        | ❌     | ❌        | ✅              |
+| Custom models        | ❌       | ❌        | ❌     | ❌        | ✅              |
+
+> Premium requests are used for Copilot Chat, agent mode, code review, and advanced model selection. Additional requests cost **$0.04/request**.
 
 > 📎 [Plans for GitHub Copilot](https://docs.github.com/en/copilot/get-started/plans)
 
 ---
 
-## How Copilot Works
+## 3. How Copilot Works
 
-### The Prompt Flow Architecture
+### Prompt Flow Architecture
 
 ```text
 ┌─────────────────────────────────────────────────────────┐
@@ -155,61 +139,69 @@ def celsius_to_fahrenheit(c):
                   │
         ┌─────────┴──────────┐
         │                    │
-┌───────▼──────┐  ┌──────────▼────────┐
-│ PROXY SERVER │  │ TOXICITY FILTER   │
-│ (Return Path)│  │ (Return Path)     │
-└───────┬──────┘  └──────────┬────────┘
+┌───────▼──────┐  ┌──────────▼───────┐
+│ PROXY SERVER │  │ TOXICITY FILTER  │
+│ (Return Path)│  │ (Return Path)    │
+└───────┬──────┘  └──────────┬───────┘
         │                    │
         └─────────┬──────────┘
                   │
         ┌─────────▼──────────┐
-        │  CODE EDITOR       │
-        │ Display Results    │
+        │    CODE EDITOR     │
+        │   Display Results  │
         └────────────────────┘
 ```
 
-### Duplicate Detection / Code Referencing
+### Code Referencing (Duplicate Detection)
 
-When Copilot generates a suggestion, it checks against ~150 characters of surrounding context in the **public code index on GitHub**:
+Copilot checks suggestions against **~150 characters** of surrounding context in the **public code index** on GitHub:
 
-- **Allow mode** - Suggestion is shown with references (repository URLs, license info)
-- **Block mode** - Suggestion is suppressed entirely ("matched public code so it was blocked")
-- Occurs in **less than 1%** of suggestions (more common for generic patterns like FizzBuzz)
-- Can be configured per individual (Pro/Pro+) or enforced by organization policy (Business/Enterprise)
+- **Allow mode** — Suggestion is shown with references (repository URLs, license info)
+- **Block mode** — Suggestion is suppressed entirely
+- Matches occur in **less than 1%** of suggestions (more common in empty files or for generic patterns like FizzBuzz)
+- Configurable per individual (Pro/Pro+) or enforced by organization policy (Business/Enterprise)
 
 > 📎 [Finding public code that matches GitHub Copilot suggestions](https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code)
 > 📎 [Introducing code referencing for GitHub Copilot](https://github.blog/news-insights/product-news/introducing-code-referencing-for-github-copilot/)
 
-### Model Fine-tuning: LoRA Approach
-
-**LoRA (Low-Rank Adaptation):**
-
-- Adds smaller trainable components to each model layer
-- Preserves original model weights (memory efficient)
-- Reduces training time and resource requirements
-- Enables quick customization without full retraining
-
 ### Model Training & Data Usage
 
-- By default, GitHub, its affiliates, and third parties will **NOT** use your data (prompts, suggestions, code snippets) for AI model training
-- This is reflected in personal settings and **cannot be enabled** by the user
+- By default, GitHub, its affiliates, and third parties will **NOT** use your data (prompts, suggestions, code snippets) for AI model training — this **cannot be enabled** by the user
 - Opt-in telemetry: You can choose to allow prompt & suggestion collection for **product improvements** (separate from model training)
+- **LoRA (Low-Rank Adaptation)** is used for model fine-tuning — adds smaller trainable components to each layer while preserving original weights, enabling efficient customization
 
 > 📎 [Managing GitHub Copilot policies as an individual subscriber](https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies)
 
 ---
 
-## Using Copilot Effectively
+## 4. Using Copilot in the IDE
+
+### Supported Environments
+
+| Category         | Tools                                                          |
+| ---------------- | -------------------------------------------------------------- |
+| **Code Editors** | VS Code, Neovim, Vim, Xcode, Eclipse                           |
+| **IDEs**         | JetBrains (IntelliJ, PyCharm, WebStorm), Visual Studio         |
+| **CLI**          | GitHub CLI (`gh copilot`) — explain commands, suggest commands |
+| **Web/Mobile**   | GitHub.com, GitHub Mobile                                      |
+
+### Inline Suggestions
+
+- Real-time code completions as you type
+- Accept with **Tab** (default, customizable)
+- Cycle through alternatives with keyboard shortcuts
+- **Next Edit Suggestions** — Copilot predicts your next edit location
 
 ### Chat Features & Commands
 
-#### References
+**References:**
 
-- **`#` File References** - Link specific files to your query
-- **`@` Environment References**
-  - `@workspace` - Reference entire solution/workspace
+| Syntax       | Purpose                              |
+| ------------ | ------------------------------------ |
+| `#filename`  | Attach a specific file to your query |
+| `@workspace` | Reference entire project/workspace   |
 
-#### Intent Modifiers (`/` commands)
+**Slash commands:**
 
 | Command     | Purpose                | Use Case               |
 | ----------- | ---------------------- | ---------------------- |
@@ -220,40 +212,89 @@ When Copilot generates a suggestion, it checks against ~150 characters of surrou
 | `/optimize` | Improve efficiency     | Enhance performance    |
 | `/tests`    | Generate unit tests    | Ensure code quality    |
 
-### Code Completion Techniques
+### Chat Modes
 
-#### Before You Ask
+| Mode      | Description                                                                     |
+| --------- | ------------------------------------------------------------------------------- |
+| **Ask**   | Ask questions and get answers in the chat panel                                 |
+| **Edit**  | Copilot makes targeted edits across files based on instructions                 |
+| **Agent** | Autonomous mode — Copilot plans, executes, iterates, and runs terminal commands |
 
-1. **Provide Clear Context** - Code before the cursor sets expectations
-2. **Use Descriptive Names** - Variable and function names guide suggestions
-3. **Structure for Success** - Organize code logically for optimal parsing
+### Copilot CLI
 
-#### Context Optimization
+GitHub Copilot in the CLI helps developers directly from the terminal:
 
-- Keep related files open in the editor
-- Use meaningful filenames and folder structures
-- Leverage `@workspace` for broader understanding
-- Maintain clean git history with descriptive commit messages
+- `gh copilot explain` — Explain a command in natural language
+- `gh copilot suggest` — Suggest a command for a task
+- Interactive sessions for multi-step exploration
+- Generate scripts and manage files
 
-#### Chat Interaction Best Practices
-
-1. Start with clear, specific questions
-2. Use file (`#`) and environment (`@`) references effectively
-3. Follow up with clarifying questions for refinement
-4. Review suggestions critically before acceptance
+> 📎 [Best practices for using GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot)
+> 📎 [Configuring GitHub Copilot in your environment](https://docs.github.com/en/copilot/how-tos/configure-personal-settings/configure-in-ide)
 
 ---
 
-## Advanced Features
+## 5. Prompt Engineering
 
-### Copilot Agents & Automation
+### The 4 S's of Effective Prompts
 
-#### GitHub Copilot Coding Agent
+| Principle    | Definition                                       | Why It Matters                               |
+| ------------ | ------------------------------------------------ | -------------------------------------------- |
+| **Single**   | Focus on one well-defined task/question          | Clarity elicits accurate responses           |
+| **Specific** | Use explicit and detailed instructions           | Specificity yields precise suggestions       |
+| **Short**    | Keep prompts concise                             | Balance clarity without overwhelming Copilot |
+| **Surround** | Use descriptive filenames and open related files | Rich context enables tailored suggestions    |
 
-- **Server-side AI assistant** that performs assigned tasks
-- Executes operations from repository issues automatically
-- Handles complex multi-step code generation tasks
-- Integrates with GitHub Actions and workflows
+### Zero-Shot Prompting
+
+Provide a description with **no examples** — Copilot infers from its training:
+
+```python
+# Function to calculate the factorial of a number
+def factorial(n):
+    # Copilot generates code with just this prompt
+```
+
+### Few-Shot Prompting
+
+Provide **2–3 input/output examples** in comments so Copilot learns the pattern:
+
+```python
+# Convert temperature from Celsius to Fahrenheit
+# celsius_to_fahrenheit(0) -> 32
+# celsius_to_fahrenheit(100) -> 212
+def celsius_to_fahrenheit(c):
+    # Copilot infers the formula from the examples above
+```
+
+> **Exam tip:** Few-shot prompting dramatically improves accuracy for complex or custom logic. Providing examples guides Copilot to understand the exact pattern, format, or behavior you expect.
+
+### Context Optimization
+
+- **Open related files** in the editor — Copilot uses them as context
+- **Close irrelevant files** to reduce noise
+- Use **meaningful filenames** and folder structures
+- Use `@workspace` for broader project understanding
+- Maintain clean git history with descriptive commit messages
+- Start new chat threads when the conversation context becomes stale
+
+### Prompt Files
+
+- Create reusable prompt templates as `.prompt.md` files
+- Enable consistent responses across team members
+- Reference with `#` in chat
+
+> 📎 [Best practices for using GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot)
+
+---
+
+## 6. Advanced Features
+
+### Copilot Coding Agent
+
+- **Server-side AI assistant** that works autonomously from GitHub issues
+- Creates branches, writes code, opens pull requests
+- Integrates with GitHub Actions for execution
 - Can be enabled/disabled per repository in user settings
 - Third-party coding agents (Anthropic Claude, OpenAI Codex) also available
 
@@ -261,155 +302,84 @@ When Copilot generates a suggestion, it checks against ~150 characters of surrou
 
 - Automated code review on pull requests
 - Suggests improvements and identifies issues
-- Can generate PR summaries automatically
-- Controlled by enterprise/org policy
-- Available on Copilot Business and Enterprise plans
-
-### IDE & Environment Support
-
-| Category         | Tools                                                  |
-| ---------------- | ------------------------------------------------------ |
-| **Code Editors** | VS Code, Neovim, GitHub Web Editor, Xcode, Eclipse     |
-| **IDEs**         | JetBrains (IntelliJ, PyCharm, WebStorm), Visual Studio |
-| **CLI**          | GitHub CLI (`gh copilot`), Terminal integration         |
-| **Web/Mobile**   | GitHub.com, GitHub Mobile                              |
-
-### Copilot Spaces
-
-- Collaborative workspaces for team study and development
-- Centralized context repository for team projects
-- Shared knowledge base and documentation
-- Enables consistent team workflows
-
-### Copilot Extensions & MCP
-
-- Extend Copilot with custom capabilities
-- Integration with third-party tools and services
-- Create specialized workflows for specific domains
-- Build domain-specific assistants
-- **Model Context Protocol (MCP)** - Connect Copilot to external tools and data sources via MCP servers (controlled by enterprise policy)
-
-### Knowledge Bases (Enterprise Only)
-
-- Create collections of documentation for Copilot Chat context
-- Curated repositories of Markdown docs that Copilot can reference
-- Enables organization-specific domain knowledge in responses
+- Generates PR summaries automatically
+- "Review selection" available on Free plan (VS Code only); full review on paid plans
 
 ### Custom Instructions
 
-- Provide persistent instructions that Copilot follows across all interactions
+- Persistent instructions Copilot follows across all interactions
 - Set coding standards, preferred patterns, and project-specific rules
 - Configured via `.github/copilot-instructions.md` in your repository
+- Organization-level custom instructions available (Business/Enterprise, preview)
+
+### Model Context Protocol (MCP)
+
+- Connect Copilot to external tools and data sources via MCP servers
+- Available across all plans
+- Enterprise policy can control MCP server access
+
+### Copilot Extensions
+
+- Extend Copilot with custom capabilities
+- Integration with third-party tools and services
+- Build domain-specific assistants
+
+### Copilot Spaces
+
+- Collaborative workspaces for team projects
+- Centralized context and shared knowledge base
+
+### Knowledge Bases (Enterprise Only)
+
+- Curated collections of Markdown documentation for Copilot Chat context
+- Enables organization-specific domain knowledge in responses
 
 ### GitHub Integration Points
 
-#### Issues & Pull Requests
-
-- Draft issue descriptions
-- Generate PR descriptions and summaries automatically
-- Suggest code improvements and changes
-- Copilot code review on PRs
-
-#### CI/CD & Automation
-
-- Generate GitHub Actions workflow files
-- Automate testing and deployment pipelines
-- Create custom actions and shell scripts
-
-#### Repository Optimization
-
-- Improve repo structure for better suggestions
-- Write descriptive README and documentation
-- Use meaningful commit messages and branch names
-- Enable better code discovery and context
+| Area             | Capabilities                                                          |
+| ---------------- | --------------------------------------------------------------------- |
+| **Issues & PRs** | Draft issue descriptions, generate PR summaries, Copilot code review  |
+| **CI/CD**        | Generate GitHub Actions workflows, automate testing/deployment        |
+| **Repository**   | Improve structure for better suggestions, descriptive README and docs |
 
 ---
 
-## Enterprise & Security
+## 7. Individual User Settings
 
-### Security Architecture
+### Settings on GitHub.com (Free/Pro/Pro+)
 
-#### Data Protection Measures
+Configure at **GitHub.com → Profile → Copilot Settings**:
 
-- **Encryption in Transit** - All data encrypted during transmission
-- **Encryption at Rest** - Data encrypted in storage
-- **Compliance Standards** - SOC 2, ISO 27001
-- **Audit Logs** - Track all usage and actions (last 180 days)
-- **IP Indemnity** - Business and Enterprise plans include intellectual property indemnification
-- **Custom Deployments** - Sensitive environment support
+| Setting                              | Options                          | Default   |
+| ------------------------------------ | -------------------------------- | --------- |
+| **Suggestions matching public code** | Allow / Block                    | Allow     |
+| **Prompt & suggestion collection**   | Allow / Block                    | Block     |
+| **Copilot coding agent**             | All repos / Selected / None      | All repos |
+| **Third-party coding agents**        | Toggle per agent (Claude, Codex) | Off       |
+| **Web search (Bing)**                | Enabled / Disabled               | Disabled  |
 
-#### Code Review & Validation
+> ⚠️ **Business/Enterprise users**: These settings are **inherited from org/enterprise policy** and cannot be overridden individually.
 
-⚠️ **Critical Security Steps:**
+> **Model training**: By default, GitHub/affiliates/third parties will **NOT** use your data for AI model training. This **cannot** be enabled.
 
-1. Always review suggested code before accepting
-2. Ensure security best practices are followed
-3. Validate code quality and correctness
-4. Run security scanning tools
-5. Test in non-production environments first
+### IDE-Level Settings
 
-#### Sensitive Data Handling
+| Setting                     | How to Configure                                        |
+| --------------------------- | ------------------------------------------------------- |
+| Enable/disable Copilot      | Command palette or IDE settings                         |
+| Per-language enable/disable | `settings.json` (VS Code) or IDE preferences            |
+| Next edit suggestions       | `github.copilot.nextEditSuggestions.enabled` in VS Code |
+| Accept keybinding           | Tab (default), customizable                             |
+| Inline suggest toggle       | Toggle in editor settings                               |
 
-- ⚠️ Be cautious with code handling sensitive data
-- Implement proper data protection measures
-- Consider data retention and privacy implications
-- Use encryption for secrets and credentials
-- Exclude sensitive files from Copilot context using content exclusion
-
-### Public Code Index & Training
-
-- GitHub Copilot checks suggestions against a **public code index** on GitHub
-- **Duplicate detection**: Matches ~150 chars of context; can **Allow** (show references) or **Block** (suppress suggestion)
-- **Opt-out available** - Exclude repositories from public index
-- Configure organization policies for data usage
-- Review and adjust personal privacy settings
-- By default, your data is **NOT used for model training**
+> 📎 [Managing GitHub Copilot policies as an individual subscriber](https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies)
+> 📎 [Configuring GitHub Copilot in your environment](https://docs.github.com/en/copilot/how-tos/configure-personal-settings/configure-in-ide)
 
 ---
 
-## Content Exclusion & Ignoring Files
+## 8. Administration: Policies & Hierarchy
 
-### Content Exclusion (Repository/Organization Settings)
-
-Content exclusion is the **official mechanism** for preventing Copilot from accessing certain files. Available on **Business** and **Enterprise** plans only.
-
-#### Who Can Configure
-
-| Level | Controller | Scope |
-|---|---|---|
-| **Repository** | Repo admin | Affects Copilot users working in that repo |
-| **Organization** | Org owner | Affects users assigned a Copilot seat by that org |
-| **Enterprise** | Enterprise owner | Affects ALL Copilot users in the enterprise |
-
-#### What Happens When Content Is Excluded
-
-- ❌ No inline suggestions in excluded files
-- ❌ Excluded content will NOT inform suggestions in other files
-- ��� Excluded content will NOT inform Copilot Chat responses
-- ❌ Excluded files will NOT be reviewed by Copilot code review
-
-#### How to Configure
-
-1. Repository: **Settings → Code & automation → Copilot → Content exclusion**
-2. Organization: **Settings → Copilot → Content exclusion**
-3. Programmatically: Via the [REST API for content exclusion management](https://docs.github.com/en/rest/copilot/copilot-content-exclusion-management)
-
-#### Limitations
-
-- Copilot may still use **semantic information** provided by the IDE indirectly (e.g., type info, hover definitions, build config)
-- Does not apply to symbolic links or remote filesystems
-- Not supported in Edit and Agent modes of Copilot Chat (preview)
-
-⚠️ **Important:** Having a file in `.gitignore` does **NOT** prevent Copilot from reading it. You must configure content exclusion separately.
-
-> 📎 [Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/context/content-exclusion)
-> 📎 [Excluding content from GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot)
-
----
-
-## Policy Hierarchy & Propagation
-
-### Enterprise → Organization → Team → Repository
+### Policy Hierarchy
 
 ```text
 ┌────────────────────────────────────────────────────────┐
@@ -438,23 +408,29 @@ Content exclusion is the **official mechanism** for preventing Copilot from acce
 
 ### Policy Types
 
-| Type | Controls | Examples |
-|---|---|---|
-| **Feature policy** | Availability of Copilot features | Copilot in IDE, Copilot Chat, code review |
-| **Privacy policy** | Sensitive actions (Allowed/Blocked) | Suggestions matching public code, telemetry |
-| **Models policy** | Availability of AI models | Advanced models beyond basic |
+| Type               | Controls                            | Examples                                                |
+| ------------------ | ----------------------------------- | ------------------------------------------------------- |
+| **Feature policy** | Availability of Copilot features    | Copilot in IDE, Copilot Chat, code review, coding agent |
+| **Privacy policy** | Sensitive actions (Allowed/Blocked) | Suggestions matching public code, telemetry             |
+| **Models policy**  | Availability of AI models           | Advanced models beyond basic                            |
 
-### Policy Enforcement Options
+### Enforcement Options
 
-| Level | Options |
-|---|---|
-| **Enterprise** | Enabled / Disabled / No policy (delegate to orgs) |
+| Level            | Options                                                              |
+| ---------------- | -------------------------------------------------------------------- |
+| **Enterprise**   | Enabled / Disabled / No policy (delegate to orgs)                    |
 | **Organization** | Enabled / Disabled / Unconfigured (placeholder, treated as disabled) |
 
-### Conflict Resolution
+### Conflict Resolution (Multi-Org Users)
 
-- When a user belongs to **multiple organizations** with conflicting policies, either the **least or most permissive** policy applies depending on the specific policy type
-- See: [Feature availability when policies conflict](https://docs.github.com/en/copilot/reference/policy-conflicts)
+When a user belongs to **multiple organizations** with conflicting policies:
+
+| Resolution                                                    | Applies To                                                                                        |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Most restrictive** (any org disables → disabled everywhere) | Copilot Metrics API, suggestions matching public code, Copilot code review for unlicensed members |
+| **Least restrictive** (any org enables → enabled everywhere)  | Copilot Chat, coding agent, Copilot CLI, MCP servers, most other features                         |
+
+> 📎 [Feature availability when policies conflict](https://docs.github.com/en/copilot/reference/policy-conflicts)
 
 ### ⏱️ 30-Minute Propagation Delay
 
@@ -464,44 +440,77 @@ After changing content exclusion or policy settings:
 
 **Force immediate propagation:**
 
-| IDE | How to Reload |
-|---|---|
-| **VS Code** | Command Palette → `Developer: Reload Window` |
-| **JetBrains / Visual Studio** | Close and reopen the application |
-| **Vim/Neovim** | Automatic — settings fetched on each file open |
+| IDE                           | How to Reload                                  |
+| ----------------------------- | ---------------------------------------------- |
+| **VS Code**                   | Command Palette → `Developer: Reload Window`   |
+| **JetBrains / Visual Studio** | Close and reopen the application               |
+| **Vim/Neovim**                | Automatic — settings fetched on each file open |
 
-> 📎 [Excluding content from GitHub Copilot – Propagation](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot)
 > 📎 [Managing policies for Copilot in your enterprise](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies)
 > 📎 [GitHub Copilot policies](https://docs.github.com/en/copilot/concepts/policies)
 
 ---
 
-## Audit Logs
+## 9. Content Exclusion
 
-### Overview
+Content exclusion is the mechanism for preventing Copilot from accessing certain files. Available on **Business** and **Enterprise** plans only.
 
-Audit logs for GitHub Copilot are available for **Business** and **Enterprise** plans. They are retained for **180 days** and track actions taken by users in the organization.
+### Who Can Configure
 
-### What Is Tracked
+| Level            | Controller       | Scope                                             |
+| ---------------- | ---------------- | ------------------------------------------------- |
+| **Repository**   | Repo admin       | Affects Copilot users working in that repo        |
+| **Organization** | Org owner        | Affects users assigned a Copilot seat by that org |
+| **Enterprise**   | Enterprise owner | Affects ALL Copilot users in the enterprise       |
 
-| Event | Description |
-|---|---|
-| `copilot.cfb_seat_assignment_created` | Copilot seat assigned to a user |
-| `copilot.cfb_seat_assignment_deleted` | Copilot seat removed from a user |
-| `copilot.content_exclusion_changed` | Content exclusion settings modified |
-| `copilot.policy.updated` | Copilot policy changed |
+### What Happens When Content Is Excluded
 
-Each event includes: **Timestamp**, **Actor** (who made the change), **Action**, **Affected user**, **Metadata** (IP, user agent).
+- ❌ No inline suggestions in excluded files
+- ❌ Excluded content will NOT inform suggestions in other files
+- ❌ Excluded content will NOT inform Copilot Chat responses
+- ❌ Excluded files will NOT be reviewed by Copilot code review
 
-### How to Access
+### How to Configure
+
+1. **Repository:** Settings → Code & automation → Copilot → Content exclusion
+2. **Organization:** Settings → Copilot → Content exclusion
+3. **Programmatically:** Via the [REST API for content exclusion management](https://docs.github.com/en/rest/copilot/copilot-content-exclusion-management)
+
+### Limitations
+
+- Copilot may still use **semantic information** provided by the IDE indirectly (e.g., type info, hover definitions, build config)
+- Does not apply to **symbolic links** or **remote filesystems**
+- **Not supported** in Copilot CLI, Copilot coding agent, and Edit/Agent modes of Copilot Chat in IDEs
+
+> ⚠️ **Important:** Having a file in `.gitignore` does **NOT** prevent Copilot from reading it. You must configure content exclusion separately.
+
+> 📎 [Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/context/content-exclusion)
+> 📎 [Excluding content from GitHub Copilot](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/exclude-content-from-copilot)
+
+---
+
+## 10. Audit Logs & Usage Metrics
+
+### Audit Logs
+
+Available for **Business** and **Enterprise** plans. Retained for **180 days**.
+
+| Event                                 | Description                         |
+| ------------------------------------- | ----------------------------------- |
+| `copilot.cfb_seat_assignment_created` | Copilot seat assigned to a user     |
+| `copilot.cfb_seat_assignment_deleted` | Copilot seat removed from a user    |
+| `copilot.content_exclusion_changed`   | Content exclusion settings modified |
+| `copilot.policy.updated`              | Copilot policy changed              |
+
+Each event includes: **Timestamp**, **Actor**, **Action**, **Affected user**, **Metadata** (IP, user agent).
+
+**How to access:**
 
 1. Navigate to **Organization Settings → Archive → Logs → Audit log**
 2. Search using `action:copilot` to filter all Copilot events
 3. Example: `action:copilot.cfb_seat_assignment_created` for seat assignments
 
-### Content Exclusion Auditing
-
-Changes to content exclusion settings are specifically tracked:
+**Content exclusion auditing:**
 
 1. Go to **Repository Settings → Copilot** or **Organization Settings → Copilot → Content exclusion**
 2. Scroll to the bottom to see who last changed settings and when
@@ -509,7 +518,14 @@ Changes to content exclusion settings are specifically tracked:
 
 ### Usage Metrics (Enterprise)
 
-Enterprise owners also have access to **Copilot usage metrics** via dashboard and APIs, covering adoption, usage, and code generation activity.
+Enterprise owners have access to **Copilot usage metrics** via dashboard and APIs:
+
+- Adoption rates and active users (daily/weekly/monthly)
+- Code completions suggested vs. accepted
+- Agent and chat usage breakdowns
+- Lines of code changed with AI
+- Model and language distribution
+- Pull request activity by Copilot
 
 > 📎 [Reviewing audit logs for GitHub Copilot Business](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/review-activity/review-audit-logs)
 > 📎 [Reviewing changes to content exclusions](https://docs.github.com/en/copilot/how-tos/configure-content-exclusion/review-changes)
@@ -518,118 +534,94 @@ Enterprise owners also have access to **Copilot usage metrics** via dashboard an
 
 ---
 
-## Individual User Settings
+## 11. Security & Data Handling
 
-### Settings on GitHub.com (Pro/Pro+/Free)
+### Data Protection
 
-Individual subscribers can configure the following at **GitHub.com → Profile → Copilot Settings**:
+| Measure                   | Details                                                                     |
+| ------------------------- | --------------------------------------------------------------------------- |
+| **Encryption in Transit** | All data encrypted during transmission                                      |
+| **Encryption at Rest**    | Data encrypted in storage                                                   |
+| **Compliance**            | SOC 2, ISO 27001                                                            |
+| **Audit Logs**            | Track usage and actions (180 days, Business/Enterprise)                     |
+| **IP Indemnity**          | Intellectual property indemnification (Business/Enterprise)                 |
+| **Data Training**         | Your code is **NOT** used for model training by default (cannot be enabled) |
 
-| Setting | Options | Default |
-|---|---|---|
-| **Suggestions matching public code** | Allow / Block | Allow |
-| **Prompt & suggestion collection** | Allow / Block | Block |
-| **Copilot coding agent** | All repos / Selected / None | All repos |
-| **Third-party coding agents** | Toggle per agent (Claude, Codex) | Off |
-| **Web search (Bing)** | Enabled / Disabled | Disabled |
+### Sensitive Data Handling
 
-> ⚠️ **Business/Enterprise users**: These settings are **inherited from org/enterprise policy** and cannot be overridden individually.
+- Be cautious with code handling sensitive data or PII
+- Use content exclusion to prevent Copilot from accessing secrets and credentials
+- Review generated code for hardcoded secrets or insecure patterns
+- Test in non-production environments first
 
-> **Model training**: By default, GitHub/affiliates/third parties will **NOT** use your data for AI model training. This cannot be enabled.
+### Code Review & Validation Checklist
 
-### IDE-Level Settings
-
-| Setting | How to Configure |
-|---|---|
-| Enable/disable Copilot | Command palette or IDE settings |
-| Per-language enable | `settings.json` (VS Code) or IDE preferences |
-| Suggestion delay | Configure in extension settings |
-| Accept keybinding | Tab (default), customizable |
-| Inline suggest toggle | Toggle in editor settings |
-
-> 📎 [Managing GitHub Copilot policies as an individual subscriber](https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies)
-> 📎 [Configuring GitHub Copilot in your environment](https://docs.github.com/en/copilot/how-tos/configure-personal-settings/configure-in-ide)
+1. ✅ Always review suggested code before accepting
+2. ✅ Validate correctness, security, and readability
+3. ✅ Run security scanning tools (SAST/DAST)
+4. ✅ Write tests for generated code (unit + integration)
+5. ✅ Peer review all AI-generated suggestions
+6. ✅ Check licensing implications
 
 ---
 
-## Best Practices & Limitations
+## 12. Best Practices & Limitations
 
 ### ✅ When to Use Copilot
 
-| Scenario                          | Benefits                          |
-| --------------------------------- | --------------------------------- |
-| Boilerplate code                  | Saves time on repetitive patterns |
-| Learning new languages/frameworks | Quick syntax and pattern examples |
-| Test generation                   | Rapid unit test creation          |
-| Documentation & comments          | Auto-documentation features       |
-| Code optimization suggestions     | Performance improvement ideas     |
-| CLI commands & scripts            | Quick shell command generation    |
+| Scenario                          | Benefits                                |
+| --------------------------------- | --------------------------------------- |
+| Boilerplate and repetitive code   | Saves time on patterns you already know |
+| Learning new languages/frameworks | Quick syntax and pattern examples       |
+| Test generation                   | Rapid unit test creation                |
+| Documentation and comments        | Auto-documentation features             |
+| Debugging and fixing syntax       | Quick error resolution                  |
+| CLI commands and scripts          | Shell command generation                |
+| Refactoring and modernization     | Modernize legacy code                   |
+| Regex and complex expressions     | Pattern generation                      |
 
 ### ❌ When NOT to Use Copilot
 
 - Highly sensitive or proprietary algorithms
 - Critical security infrastructure code
 - Compliance-sensitive code requiring explicit documentation
-- Code handling personally identifiable information (PII)
 - Cryptographic implementations (use audited libraries instead)
 - Safety-critical systems (medical devices, transportation)
 
-### Known Limitations & Considerations
+### Known Limitations
 
-#### Context Awareness
-
-- May lack awareness of very large codebases
-- Complex domain-specific logic requires manual intervention
-- Edge cases and corner cases need developer validation
-- Limited understanding of custom business logic
-
-#### Occasional Inaccuracies
-
-- Generated code may contain bugs or inefficiencies
-- Security vulnerabilities may appear in suggestions
-- Always review and test code before production deployment
-- Performance implications may not be obvious
-
-#### Performance Factors
-
-- Large context windows may impact response time
-- Processing time varies with prompt complexity
-- Network latency affects suggestion latency
-- LLM reasoning time increases with complex requests
-
-#### Licensing & Copyright
-
-⚠️ **Legal Considerations:**
-
-- Be aware of licensing implications of suggested code
-- Review GPL and other copyleft licenses carefully
-- Understand usage rights and attribution requirements
-- Risk of license compliance issues in enterprise environments
-- Consult legal team for sensitive projects
-- **IP indemnity** is included with Business and Enterprise plans
-
-### Testing & Validation Framework
-
-1. **Unit Testing** - Create tests for generated code
-2. **Integration Testing** - Verify with existing systems
-3. **Code Review** - Peer review all suggestions
-4. **Security Scanning** - Run SAST/DAST tools
-5. **Performance Testing** - Validate efficiency metrics
-6. **Documentation Review** - Ensure accuracy and completeness
+| Area                  | Details                                                                                                 |
+| --------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Context awareness** | May lack awareness of very large codebases; limited understanding of custom business logic              |
+| **Accuracy**          | Generated code may contain bugs, inefficiencies, or security vulnerabilities                            |
+| **Edge cases**        | Complex domain-specific logic and corner cases need developer validation                                |
+| **Performance**       | Large context windows and complex prompts may impact response time; network latency affects suggestions |
+| **Licensing**         | Review GPL and copyleft licenses carefully; IP indemnity is included with Business and Enterprise plans |
 
 ---
 
-## Quick Reference: Principles & Commands
+## 13. Quick Reference
 
-### The 4 S's of Effective Prompts
+### Key Numbers to Remember
+
+| Value              | Meaning                                                    |
+| ------------------ | ---------------------------------------------------------- |
+| **30 minutes**     | Max propagation delay for policy/content exclusion changes |
+| **150 characters** | Context window checked for duplicate/public code matching  |
+| **< 1%**           | Frequency of suggestions matching public code              |
+| **180 days**       | Audit log retention period                                 |
+| **$0.04**          | Cost per additional premium request                        |
+
+### The 4 S's
 
 ```text
 Single   → One clear task
-Specific → Detailed instructions  
+Specific → Detailed instructions
 Short    → Concise phrasing
 Surround → Rich file context
 ```
 
-### Chat Command Quick Guide
+### Chat Quick Reference
 
 ```text
 #filename      → Reference specific files
@@ -642,7 +634,7 @@ Surround → Rich file context
 /tests         → Generate tests
 ```
 
-### Policy Hierarchy Quick Reference
+### Policy Hierarchy
 
 ```text
 Enterprise  →  Defines or delegates ("No policy")
@@ -651,27 +643,19 @@ Enterprise  →  Defines or delegates ("No policy")
             └─ Repository  →  Content exclusion only
 ```
 
-### Key Numbers to Remember
-
-```text
-30 minutes    → Max propagation delay for policy/content exclusion changes
-150 characters → Context window checked for duplicate/public code matching
-< 1%          → Frequency of suggestions matching public code
-180 days      → Audit log retention period
-$0.04         → Cost per additional premium request
-```
-
 ---
 
 ## Related Resources
 
 - [GitHub Copilot Official Documentation](https://docs.github.com/en/copilot)
+- [GitHub Copilot Trust Center](https://copilot.github.trust.page)
 - [Microsoft Responsible AI Principles](https://www.microsoft.com/en-us/ai/responsible-ai)
-- [GitHub Copilot Exam Preparation Guide](https://assets.ctfassets.net/wfutmusr1t3h/3i7ISEUsTLBgOGrWrML07y/dd586e2b2b607988e2679ed8cce36a76/github-copilot-exam-preparation-study-guide.pdf)
+- [Study guide for Exam GH-300](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300)
 - [Plans for GitHub Copilot](https://docs.github.com/en/copilot/get-started/plans)
-- [Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/context/content-exclusion)
+- [Best practices for using GitHub Copilot](https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot)
 - [GitHub Copilot policies](https://docs.github.com/en/copilot/concepts/policies)
+- [Content exclusion for GitHub Copilot](https://docs.github.com/en/copilot/concepts/context/content-exclusion)
 - [Managing policies as an individual subscriber](https://docs.github.com/en/copilot/how-tos/manage-your-account/manage-policies)
 - [Reviewing audit logs for Copilot Business](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/review-activity/review-audit-logs)
 - [Finding public code that matches Copilot suggestions](https://docs.github.com/en/copilot/how-tos/get-code-suggestions/find-matching-code)
-- [GitHub Copilot Trust Center](https://copilot.github.trust.page)
+- [Feature availability when policies conflict](https://docs.github.com/en/copilot/reference/policy-conflicts)
